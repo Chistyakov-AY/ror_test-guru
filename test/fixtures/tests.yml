@@ -3,7 +3,9 @@
 one:
   title: MyString
   level: 1
+  category_id: 1
 
 two:
   title: MyString
   level: 1
+  category_id: 1
