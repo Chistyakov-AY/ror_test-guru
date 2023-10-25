@@ -5,3 +5,29 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Answer.delete_all
+Question.delete_all
+Test.delete_all
+Category.delete_all
+User.delete_all
+
+u1 = User.create!(title: 'Александр')
+u2 = User.create!(title: 'Владимир')
+u3 = User.create!(title: 'Денис')
+
+c1 = Category.create(title: 'Backend', user_id: u1.id)
+c2 = Category.create(title: 'Frontend', user_id: u2.id)
+c3 = Category.create(title: 'Backend', user_id: u3.id)
+
+t1 = Test.create(title: 'Ruby', level: 1, category_id: c1.id)
+t2 = Test.create(title: 'Ruby', level: 2, category_id: c2.id)
+t3 = Test.create(title: 'HTML', category_id: c3.id)
+
+q1 = Question.create(body: 'Вопрос по Ruby, уровень 1', test_id: t1.id)
+q2 = Question.create(body: 'Вопрос по Ruby, уровень 2', test_id: t2.id)
+q3 = Question.create(body: 'Вопрос по HTML № 1', test_id: t3.id)
+
+Answer.create(body: 'Ответ по Ruby, уровень 1', question_id: q1.id)
+Answer.create(body: 'Ответ по Ruby, уровень 2', question_id: q2.id)
+Answer.create(body: 'Ответ по HTML № 1', question_id: q3.id)
