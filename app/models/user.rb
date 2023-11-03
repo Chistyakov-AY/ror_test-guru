@@ -3,8 +3,9 @@
 # Пользователь на этом уровне сложности
 
 class User < ApplicationRecord
+  has_many :categories
 
-  # def list_of_user_tests(level)
-  #   t = Test.where(level: level AND )
-  # end
+  def list_of_user_tests(level)
+    categories.map(&:tests).flatten.select { |x| x.level == level }
+  end
 end

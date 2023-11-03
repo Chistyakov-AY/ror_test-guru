@@ -20,8 +20,8 @@ c1 = Category.create(title: 'Backend', user_id: u1.id)
 c2 = Category.create(title: 'Frontend', user_id: u2.id)
 c3 = Category.create(title: 'Backend', user_id: u3.id)
 
-t1 = Test.create(title: 'Ruby', level: 1, category_id: c1.id)
-t2 = Test.create(title: 'Ruby', level: 1, category_id: c1.id)
+t1 = Test.create(title: 'Ruby Alex', level: 1, category_id: c1.id)
+t2 = Test.create(title: 'Ruby', level: 1, category_id: c2.id)
 t3 = Test.create(title: 'HTML', category_id: c3.id)
 
 q1 = Question.create(body: 'Вопрос по Ruby, уровень 1', test_id: t1.id)
