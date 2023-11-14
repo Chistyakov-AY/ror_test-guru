@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
   belongs_to :user
-  has_many :tests
+  has_many :test
 end
