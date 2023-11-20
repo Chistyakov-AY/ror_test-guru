@@ -4,6 +4,7 @@
 
 
 class Test < ApplicationRecord
+
   has_many :test_users
   has_many :users, through: :test_users
 

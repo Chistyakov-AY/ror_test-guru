@@ -11,6 +11,7 @@ Question.destroy_all
 Test.destroy_all
 Category.destroy_all
 User.destroy_all
+TestUser.destroy_all
 
 u1 = User.create(title: 'Александр')
 u2 = User.create(title: 'Владимир')
