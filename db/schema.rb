@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_16_131720) do
+ActiveRecord::Schema.define(version: 2023_11_21_145742) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -23,10 +23,8 @@ ActiveRecord::Schema.define(version: 2023_11_16_131720) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -49,10 +47,11 @@ ActiveRecord::Schema.define(version: 2023_11_16_131720) do
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 0
-    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_tests_on_category_id"
+    t.integer "category_id"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,9 +60,11 @@ ActiveRecord::Schema.define(version: 2023_11_16_131720) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "categories", "users"
+  add_foreign_key "questions", "tests"
+  add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
   add_foreign_key "test_users", "tests"
   add_foreign_key "test_users", "users"
+  add_foreign_key "tests", "users"
   add_foreign_key "tests", "categories"
 end
