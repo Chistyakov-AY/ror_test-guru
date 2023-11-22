@@ -22,9 +22,9 @@ c2 = Category.create(title: 'Frontend')
 c3 = Category.create(title: 'Fullstack')
 
 t1 = Test.create(title: 'Ruby on Rails', level: 2, category_id: c1.id, user_id: u1.id)
-t2 = Test.create(title: 'Ruby', level: 2, category_id: c1.id, user_id: u2.id)
+t2 = Test.create(title: 'Ruby', level: 2, category_id: c3.id, user_id: u2.id)
 t3 = Test.create(title: 'HTML', category_id: c3.id, user_id: u3.id)
-t4 = Test.create(title: 'Ruby', level: 1, category_id: c2.id, user_id: u1.id)
+t4 = Test.create(title: 'Ruby', level: 1, category_id: c1.id, user_id: u1.id)
 
 q1 = Question.create(body: 'Вопрос по Ruby, уровень 1', test_id: t1.id)
 q2 = Question.create(body: 'Вопрос по Ruby, уровень 2', test_id: t2.id)
