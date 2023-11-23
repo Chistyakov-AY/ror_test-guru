@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   scope :easy, -> (title) { where(title: title) }
 
-  # def list_of_user_tests(level)
-  #   tests.where(level: level)
-  # end
+  def list_of_user_tests(level)
+    author_tests.list_of_level_tests(level)
+  end
 end
