@@ -11,7 +11,9 @@ class Test < ApplicationRecord
   has_many :test_users
   has_many :users, through: :test_users
 
+  
+
   def self.tests_by_category(category_title)
     joins(:category).where("category.title" => category_title).order('id DESC')
-  end    
+  end
 end

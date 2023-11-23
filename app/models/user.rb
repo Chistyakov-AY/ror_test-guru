@@ -7,7 +7,9 @@ class User < ApplicationRecord
   has_many :author_tests, class_name: "Test"
   has_many :tests, through: :test_users
 
-  def list_of_user_tests(level)
-    tests.where(level: level)
-  end
+  scope :easy, -> (title) { where(title: title) }
+
+  # def list_of_user_tests(level)
+  #   tests.where(level: level)
+  # end
 end
