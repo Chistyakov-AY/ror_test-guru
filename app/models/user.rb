@@ -3,6 +3,9 @@
 # Пользователь на этом уровне сложности
 
 class User < ApplicationRecord
+  validates :title, presence: true
+  validates :email, presence: true
+
   has_many :test_users
   has_many :author_tests, class_name: "Test"
   has_many :tests, through: :test_users

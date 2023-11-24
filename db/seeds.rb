@@ -13,9 +13,9 @@ Test.destroy_all
 Category.destroy_all
 User.destroy_all
 
-u1 = User.create(title: 'Александр')
-u2 = User.create(title: 'Владимир')
-u3 = User.create(title: 'Денис')
+u1 = User.create(title: 'Александр', email: 'alex@mail.ru')
+u2 = User.create(title: 'Владимир', email: 'vlad@gmail.ru')
+u3 = User.create(title: 'Денис', email: 'dan@yandex.ru')
 
 c1 = Category.create(title: 'Backend')
 c2 = Category.create(title: 'Frontend')
