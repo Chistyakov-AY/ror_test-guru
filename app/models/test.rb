@@ -2,9 +2,10 @@
 # названий всех Тестов у которых Категория называется определённым образом (название категории 
 # передается в метод в качестве аргумента).
 
-
 class Test < ApplicationRecord
   validates :title, presence: true
+  validates :title, uniqueness: { scope: :level}
+  validates :level, numericality: { greater_than_or_equal_to: 0 }
 
   belongs_to :author, class_name: "User", foreign_key: "user_id"
   belongs_to :category
