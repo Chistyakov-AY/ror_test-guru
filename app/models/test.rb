@@ -1,9 +1,8 @@
-# Создайте метод класса в модели Test, который возвращает отсортированный по убыванию массив 
-# названий всех Тестов у которых Категория называется определённым образом (название категории 
-# передается в метод в качестве аргумента).
-
-
 class Test < ApplicationRecord
+  validates :title, presence: true
+  validates :title, uniqueness: { scope: :level}
+  validates :level, numericality: { greater_than_or_equal_to: 0 }
+
   belongs_to :author, class_name: "User", foreign_key: "user_id"
   belongs_to :category
   has_many :questions
@@ -11,7 +10,13 @@ class Test < ApplicationRecord
   has_many :test_users
   has_many :users, through: :test_users
 
-  def self.tests_by_category(category_title)
-    joins(:category).where("category.title" => category_title).order('id DESC')
-  end    
+  scope :list_of_level_tests, -> (level) { where(level: level) }
+  scope :simple_tests, -> { list_of_level_tests(0..1) }
+  scope :average_tests, -> { list_of_level_tests(2..4) }
+  scope :difficult_tests, -> { list_of_level_tests(5..Float::INFINITY) }
+  scope :tests_by_category, ->(category_title) { Test.joins(:category).where("categories.title = ?", category_title ) }
+
+  def self.tests_name_by_category(category_title)
+    Test.tests_by_category(category_title).order(title: :DESC)
+  end
 end
