@@ -11,12 +11,10 @@ class Test < ApplicationRecord
   has_many :users, through: :test_users
 
   scope :list_of_level_tests, -> (level) { where(level: level) }
-
   scope :simple_tests, -> { list_of_level_tests(0..1) }
   scope :average_tests, -> { list_of_level_tests(2..4) }
   scope :difficult_tests, -> { list_of_level_tests(5..Float::INFINITY) }
   scope :tests_by_category, ->(category_title) { Test.joins(:category).where("categories.title = ?", category_title ) }
-  scope :list_of_level_tests, -> (level) { where(level: level) }
 
   def self.tests_name_by_category(category_title)
     Test.tests_by_category(category_title).order(title: :DESC)
