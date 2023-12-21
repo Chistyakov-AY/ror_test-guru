@@ -1,0 +1,8 @@
+<h1>All Tests</h1>
+
+<% @tests.each do |test| %>
+  <h2><%= test.title %></h2>
+  <p>
+  <%= "Level: #{test.level};" %>
+  </p>
+<% end %>
