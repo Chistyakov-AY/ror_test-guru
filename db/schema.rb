@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2023_11_30_094653) do
     t.string "email"
   end
 
+  add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
   add_foreign_key "test_users", "tests"
   add_foreign_key "test_users", "users"
