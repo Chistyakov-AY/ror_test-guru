@@ -1,14 +1,15 @@
 class QuestionsController < ApplicationController
   before_action :find_question, only: %i[show destroy]
   before_action :find_test, only: %i[index create]
+
+  rescue_from ActiveRecord::RecordNotFound, with: :exception_question_not_found
   
   def index
-    @questions = Question.all
     render plain: @test.questions.inspect
   end
   
   def show
-    render plain: @question.inspect
+    render plain: @question.body
   end
 
   def new
@@ -41,5 +42,9 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:body, :test_id)
+  end
+
+  def exception_question_not_found
+    render plain: 'Вопрос не найден!'
   end
 end
