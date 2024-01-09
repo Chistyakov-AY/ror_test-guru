@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :find_question, only: %i[show destroy]
   before_action :find_test, only: %i[index create]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :exception_question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
   
   def index
     render plain: @test.questions.inspect
@@ -44,7 +44,7 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:body, :test_id)
   end
 
-  def exception_question_not_found
+  def rescue_with_question_not_found
     render plain: 'Вопрос не найден!'
   end
 end
