@@ -19,4 +19,4 @@ class Test < ApplicationRecord
   def self.tests_name_by_category(category_title)
     Test.tests_by_category(category_title).order(title: :DESC)
   end
-end
+  end
