@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.create(question_params)
+    @question = @test.questions.new(question_params)
 
     if @question.save
       render inline: '<p>Вопрос: <%= @question.inspect %>!</p> добавлен!'
@@ -41,7 +41,7 @@ class QuestionsController < ApplicationController
   end 
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def rescue_with_question_not_found
