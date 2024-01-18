@@ -1,0 +1,6 @@
+<ul>
+  <li>Body: <%= @question.body %></li>
+</ul>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'List of tests', test_questions_path(@question.test_id) %>

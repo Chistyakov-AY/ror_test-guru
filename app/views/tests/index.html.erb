@@ -1,5 +1,7 @@
-<h2> All tests </h2>
+<h2> All tests: </h2>
 
 <% @tests.each do |t| %>
-<p><%= t.title %></p>
+  <ul>
+  <li> "<%= t.title %>" has <%= t.questions.count %> question. </li>
+  </ul>
 <% end %>
