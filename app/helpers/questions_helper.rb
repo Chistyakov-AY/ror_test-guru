@@ -4,6 +4,6 @@ module QuestionsHelper
   end
 
   def github_url(author, repo)
-    link_to "GitHub репозиторий", "https://www.github.com/#{author}/#{repo}/tree/master", target: :blank
+    link_to "GitHub репозиторий", "https://github.com/#{author}/#{repo}", target: :blank
   end
 end
