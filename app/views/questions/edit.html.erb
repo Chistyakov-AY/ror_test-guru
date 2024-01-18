@@ -1,4 +1,4 @@
-<h1>Edit Question id: <%= @question.id %></h1>
+<h1><%= question_header(@question) %></h1>
 <%= render 'form' %>
 
 <%= link_to 'List of tests', test_questions_path(@question.test_id) %>
