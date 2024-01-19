@@ -11,7 +11,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <p> <%= flash[:notice]%></p>
+      <%= yield %>
+    </div>
   </body>
   <%= render "layouts/footer" %>
 </html>
