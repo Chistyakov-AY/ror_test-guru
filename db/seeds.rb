@@ -26,9 +26,10 @@ t2 = Test.create(title: 'Java', level: 3, category_id: c3.id, user_id: u2.id)
 t3 = Test.create(title: 'HTML', category_id: c2.id, user_id: u3.id)
 t4 = Test.create(title: 'Ruby', level: 5, category_id: c1.id, user_id: u1.id)
 
-q1 = Question.create(body: 'Вопрос по Ruby, уровень 1', test_id: t1.id)
-q2 = Question.create(body: 'Вопрос по Ruby, уровень 2', test_id: t1.id)
-q3 = Question.create(body: 'Вопрос по HTML, уровень 1', test_id: t3.id)
+q1 = Question.create(body: 'Вопрос по Ruby', test_id: t1.id)
+q2 = Question.create(body: 'Вопрос по Java', test_id: t1.id)
+q3 = Question.create(body: 'Вопрос по HTML', test_id: t1.id)
+q4 = Question.create(body: 'Вопрос по Ruby, уровень 2', test_id: t1.id)
 
 Answer.create(body: 'Ответ по Ruby, уровень 1', question_id: q1.id)
 Answer.create(body: 'Ответ по Ruby, уровень 2', question_id: q2.id)
