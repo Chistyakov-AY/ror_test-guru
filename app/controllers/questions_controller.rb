@@ -1,44 +1,33 @@
 class QuestionsController < ApplicationController
-  before_action :find_question, only: %i[show destroy edit update]
-  before_action :find_test, only: %i[new create]
+  before_action :find_question, only: %i[show destroy]
+  before_action :find_test, only: %i[index create]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
   
   def index
-    @questions = Question.all
+    render plain: @test.questions.inspect
   end
   
-  # def show
-  # end
-
-  def edit
+  def show
+    render plain: @question.body
   end
 
   def new
-    @question = @test.questions.new
+
   end
 
   def create
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to test_path(@question.test_id), notice: "Вопрос '#{@question.body}' создан"
+      render inline: '<p>Вопрос: <%= @question.inspect %>!</p> добавлен!'
     else
-      render :new
-    end
-  end
-
-  def update
-    if @question.update(question_params)
-      redirect_to test_path(@question.test_id), notice: "Вопрос '#{@question.body}' изменен"
-    else
-      render :edit
+      render inline: '<p>Ошибка: <%= @question.errors.inspect %>!</p>'
     end
   end
 
   def destroy
     @question.destroy
-    redirect_to test_path(@question.test_id)
   end
 
   private
