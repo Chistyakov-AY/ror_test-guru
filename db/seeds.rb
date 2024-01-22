@@ -32,8 +32,10 @@ q3 = Question.create(body: 'Вопрос по HTML', test_id: t1.id)
 q4 = Question.create(body: 'Вопрос по Ruby, уровень 2', test_id: t1.id)
 
 Answer.create(body: 'Ответ по Ruby, уровень 1', question_id: q1.id)
-Answer.create(body: 'Ответ по Ruby, уровень 2', question_id: q2.id)
-Answer.create(body: 'Ответ по HTML, уровень 1', question_id: q3.id)
+Answer.create(body: 'Ответ по Ruby, уровень 2', question_id: q1.id)
+Answer.create(body: 'Ответ по HTML, уровень 1', question_id: q1.id)
+Answer.create(body: 'Ответ по HTML, уровень 2', question_id: q2.id)
+Answer.create(body: 'Ответ по HTML, уровень 3', question_id: q3.id)
 
 TestUser.create(user: u1, test: t1)
 TestUser.create(user: u1, test: t2)

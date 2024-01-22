@@ -1,70 +1,54 @@
 class AnswersController < ApplicationController
   before_action :set_answer, only: %i[ show edit update destroy ]
+  before_action :find_question, only: %i[ new create ]
 
-  # GET /answers or /answers.json
   def index
     @answers = Answer.all
   end
 
-  # GET /answers/1 or /answers/1.json
   def show
   end
 
-  # GET /answers/new
   def new
-    @answer = Answer.new
+    @answer = @question.answers.new
   end
 
-  # GET /answers/1/edit
   def edit
   end
 
-  # POST /answers or /answers.json
   def create
-    @answer = Answer.new(answer_params)
-
-    respond_to do |format|
-      if @answer.save
-        format.html { redirect_to answer_url(@answer), notice: "Answer was successfully created." }
-        format.json { render :show, status: :created, location: @answer }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @answer.errors, status: :unprocessable_entity }
-      end
+    @answer = @question.answers.new(answer_params)
+  
+    if @answer.save
+      redirect_to question_path(@answer.question_id), notice: 'Answer was successfully updated.'
+    else
+      render :new
     end
-  end
+  end 
 
-  # PATCH/PUT /answers/1 or /answers/1.json
   def update
-    respond_to do |format|
-      if @answer.update(answer_params)
-        format.html { redirect_to answer_url(@answer), notice: "Answer was successfully updated." }
-        format.json { render :show, status: :ok, location: @answer }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @answer.errors, status: :unprocessable_entity }
-      end
+    if @answer.update(answer_params)
+      redirect_to question_path(@answer.question_id)
+    else
+      render :edit
     end
   end
 
-  # DELETE /answers/1 or /answers/1.json
   def destroy
     @answer.destroy
-
-    respond_to do |format|
-      format.html { redirect_to answers_url, notice: "Answer was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to question_path(@answer.question_id)
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    def find_question
+      @question = Question.find(params[:question_id])
+    end
+
     def set_answer
       @answer = Answer.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def answer_params
-      params.fetch(:answer, {})
+      params.require(:answer).permit(:body, :correct)   
     end
 end
