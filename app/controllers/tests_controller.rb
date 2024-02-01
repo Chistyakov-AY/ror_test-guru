@@ -17,7 +17,7 @@ class TestsController < ApplicationController
     @test = Test.new(test_params)
 
     if @test.save
-      redirect_to tests_path(@test), notice: "Тест '#{@test.title}' создан"
+      redirect_to tests_path(@test), notice: "Test '#{@test.title}' was successfully create."
     else
       render new_test_path
     end
@@ -25,7 +25,7 @@ class TestsController < ApplicationController
 
   def update
     if @test.update(test_params)
-      redirect_to tests_path(@test), notice: "Тест '#{@test.title}' изменен"
+      redirect_to tests_path(@test), notice: "Test '#{@test.title}' was successfully update."
     else
       render new_test_path
     end
@@ -38,7 +38,7 @@ class TestsController < ApplicationController
 
   def destroy
     @test.destroy
-    redirect_to tests_path(@test)
+    redirect_to tests_path(@test), notice: "Test '#{@test.title}' was successfully destroy."
   end
   
 private

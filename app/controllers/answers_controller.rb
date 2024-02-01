@@ -20,7 +20,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.new(answer_params)
   
     if @answer.save
-      redirect_to question_path(@answer.question_id), notice: 'Answer was successfully created.'
+      redirect_to question_path(@answer.question_id), notice: "Answer '#{@answer.body}' was successfully created."
     else
       render :new
     end
@@ -28,7 +28,7 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to question_path(@answer.question_id), notice: 'Answer was successfully updated.'
+      redirect_to question_path(@answer.question_id), notice: "Answer '#{@answer.body}' was successfully updated."
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class AnswersController < ApplicationController
 
   def destroy
     @answer.destroy
-    redirect_to question_path(@answer.question_id)
+    redirect_to question_path(@answer.question_id), notice: "Answer '#{@answer.body}' was successfully destroy."
   end
 
   private

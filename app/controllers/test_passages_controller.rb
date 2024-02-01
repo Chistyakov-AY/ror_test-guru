@@ -1,4 +1,4 @@
-class TestPassegesController < ApplicationController
+class TestPassagesController < ApplicationController
   def show
 
   end

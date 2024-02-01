@@ -1,7 +1,7 @@
-<h1>Create New Test</h1>
+<h1><%= test_header(@test) %></h1>
 
 <%= form_with model: @test do |form| %>
-
+  <%= render 'shared/errors', resource: @test %>
   <p>
     <%= form.label :title, 'Test:'%>
     <%= form.text_area :title, rows: 2, id: :test_title %>
