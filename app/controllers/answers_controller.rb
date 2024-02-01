@@ -5,10 +5,7 @@ class AnswersController < ApplicationController
   def index
     @answers = Answer.all
   end
-
-  def show
-  end
-
+  
   def new
     @answer = @question.answers.new
   end

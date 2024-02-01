@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# TestPassage.destroy_all
+TestPassage.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Test.destroy_all
@@ -43,10 +43,3 @@ Answer.create(body: 'Нельзя соединить два массива', que
 Answer.create(body: 'С помощью метода +', question_id: q2.id, correct: true)
 Answer.create(body: 'Ответ по HTML', question_id: q5.id)
 Answer.create(body: 'Ответ по HTML, уровень 3', question_id: q4.id)
-
-# TestPassage.create(user_id: 1, test_id: 1, current_question_id: q1.id)
-# TestUser.create(user: u1, test: t2)
-# TestUser.create(user: u2, test: t2)
-# TestUser.create(user: u2, test: t3)
-# TestUser.create(user: u3, test: t3)
-# TestUser.create(user: u3, test: t4)
