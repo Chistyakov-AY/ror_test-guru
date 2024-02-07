@@ -3,7 +3,7 @@ module QuestionsHelper
     if question.persisted?
       "Edit question '#{question.body}'"
     else
-      "Create New Questions"
+      "Create New Question"
     end
   end
 
