@@ -1,2 +1,15 @@
-<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+<h1> Test was Completed! </h1>
+
+<% if @test_passage.test_passed? %>
+  <p style="color:green;"> Результат: <%= @test_passage.result_calculation %>% </p>
+  <p style="color:green;"> Test passed! </p>
+<% else %>
+  <p style="color:red;"> Результат: <%= @test_passage.result_calculation %>%</p>
+  <p style="color:red;"> Test failed! </p>
+<% end %>
+
+<p> Правильных ответов:<%= @test_passage.correct_questions %> </p>
+<p> Всего вопросов:<%= @test_passage.test.questions.count %> </p>
+
 <%= link_to 'Back', tests_path %>
+
