@@ -10,7 +10,7 @@ class TestPassage < ApplicationRecord
   end
   
   def accept!(answer_ids)
-    if correct_answer?
+    if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
   
