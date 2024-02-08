@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to tests_path, notice: "User '#{@user.title}' was successfully create."
+      redirect_to users_path, notice: "User '#{@user.title}' was successfully created."
     else
       render :new
     end
