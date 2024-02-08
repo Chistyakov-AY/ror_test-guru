@@ -3,11 +3,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    @users = User.all
+  end
+
   def create
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to tests_path
+      redirect_to tests_path, notice: "User '#{@user.title}' was successfully create."
     else
       render :new
     end

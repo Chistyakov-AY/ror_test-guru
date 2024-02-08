@@ -1,0 +1,25 @@
+<h3>All Users</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> Id </th>
+      <th> Title </th>
+      <th> Email </th>
+      <th> Password </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.title %></td>
+        <td><%= user.email %></td>
+        <td><%= user.password_digest %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', tests_path %>
