@@ -6,6 +6,7 @@
       <th> Id </th>
       <th> Title </th>
       <th> Email </th>
+      <th colspan="1">Actions</th>
     </tr>
   </thead>
 
@@ -15,6 +16,10 @@
         <td><%= user.id %></td>
         <td><%= user.title %></td>
         <td><%= user.email %></td>
+        <td><%= link_to 'Delete',
+                user_path(user),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

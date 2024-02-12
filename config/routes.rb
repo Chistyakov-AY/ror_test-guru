@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get :signup, to: 'users#new'
 
-  resources :users, only: %i[ create index ]
+  resources :users, only: %i[ create index destroy]
   
   resources :tests do
     resources :questions, shallow: true do
