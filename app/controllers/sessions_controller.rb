@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path
+      redirect_to tests_path, notice: "#{user.title} welcome!"
     else
-      render :new
+      redirect_to sessions_new_path, notice: "Username and password entered incorrectly!"
     end
   end
 end
