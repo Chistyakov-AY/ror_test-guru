@@ -11,8 +11,9 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <p> <%= flash[:notice]%></p>
+    <% if logged_in? %>
+    <p class="nav user">Welcome, <b><%= current_user.title %></b> Guru</p>
+     <% end %>
       <%= yield %>
     </div>
   </body>

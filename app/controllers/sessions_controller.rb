@@ -7,9 +7,10 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path, notice: "#{user.title} welcome!"
+      redirect_to tests_path, notice: "#{user.title} welcome to Projekt 'TestGuru'!"
     else
-      redirect_to sessions_new_path, notice: "Username and password entered incorrectly!"
+      flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please' # не отобажается красная рамка!!!
+      render :new
     end
   end
 end
