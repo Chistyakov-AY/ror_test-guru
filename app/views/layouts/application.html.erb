@@ -11,9 +11,7 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-    <p class="nav user">Welcome, <b><%= current_user.title %></b> Guru</p>
-     <% end %>
+    <%= render "layouts/header" %>
       <%= yield %>
     </div>
   </body>
