@@ -1,5 +1,5 @@
 <%= form_with url: sessions_path, local: true do |form| %>
-  <%= flash_messages %>
+  <%= render 'shared/flash', resource: @flash %>
 
   <p>
     <%= form.label :email %><br>
