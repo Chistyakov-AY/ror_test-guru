@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to(cookies.delete(:requested_url) || tests_path)
     else
-      flash.now[:alert] = 'Verify your Email and Password, please!'
+      flash.now[:alert] = "Verify your Email and Password, please!"
       render :new
     end
   end
