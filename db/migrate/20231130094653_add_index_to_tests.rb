@@ -3,3 +3,4 @@ class AddIndexToTests < ActiveRecord::Migration[6.1]
     add_index :tests, [:title, :level], unique: true
   end
 end
+ 
