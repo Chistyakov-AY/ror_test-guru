@@ -8,8 +8,10 @@ module ApplicationHelper
   end
 
   def flash_message
-    flash.each do |type, message|
-      content_tag :p, message, class: "flash #{type}" if flash[type]
-    end
+    if flash.present?  
+      flash.each do |type, message|
+        content_tag :p, message, class: "flash #{type}" if flash[type]
+      end
+    end  
   end
 end
