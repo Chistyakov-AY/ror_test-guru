@@ -47,9 +47,9 @@ private
     @test = Test.find(params[:id])    
   end
 
-  def find_user
-    @user = User.first
-  end
+  # def find_user
+  #   @user = User.first
+  # end
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id, :user_id)
