@@ -20,6 +20,8 @@ module RorTestGuru
 
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
     config.i18n.default_locale = :ru
+    config.i18n.default_locale = :fr
+    config.i18n.default_locale = :en
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end

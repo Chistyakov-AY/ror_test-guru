@@ -13,13 +13,13 @@
   </p>
 
   <p>
-  <%= form.label :category_id %>:
+  <%= form.label :category_id, 'Category' %>:
   <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 
   <p>
-  <%= form.label :user_id %>:
-  <%= form.collection_select :user_id, User.all, :id, :title, prompt: true %>
+  <%= form.label :user_id, 'Author' %>:
+  <%= form.collection_select :user_id, User.all, :id, :email, prompt: true %>
   </p>
 
   <p><%= form.submit 'Сохранить' %></p> 
