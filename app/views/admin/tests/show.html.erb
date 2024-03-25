@@ -1,4 +1,4 @@
-<h3> "<%= @test.title %>" questions: </h3>
+<h3> Questions for Test "<%= @test.title %>" </h3>
 
 <table>
   <tr>
@@ -9,9 +9,9 @@
     <th colspan="3">Actions</th>
   </tr>
   
-  <%= render @test.questions %>
+  <%= render partial: 'questions/question', collection: @test.questions %>
 </table>
 <p>
-<%= link_to 'Back', tests_path %> |
+<%= link_to 'Back', admin_tests_path %> |
 <%= link_to 'New question', new_test_question_path(@test) %>
 </p>

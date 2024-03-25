@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully created."
+      redirect_to admin_test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully created."
     else
       render :new
     end
@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully update."
+      redirect_to tests_path(@question.test_id), notice: "Question '#{@question.body}' was successfully update."
     else
       render :edit
     end

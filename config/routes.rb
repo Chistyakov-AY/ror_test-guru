@@ -11,10 +11,16 @@ Rails.application.routes.draw do
   # resources :users, only: %i[ new create index destroy ]
   # resources :sessions, only: %i[ new create ]
   
-  resources :tests do
-    resources :questions, shallow: true do
-      resources :answers, shallow: true
+  resources :tests, only: :index do
+    resources :questions, except: :index, shallow: true do
+      resources :answers, except: :index, shallow: true
     end
+
+    # resources :tests, only: :index do
+    #   member do
+    #     post :start
+    #   end
+    # end
   
     member do
       post :start
@@ -29,4 +35,13 @@ Rails.application.routes.draw do
       get :result
     end
   end
+
+  namespace :admin do
+    resources :tests do
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: :index
+      end
+    end
+  end
+
 end
