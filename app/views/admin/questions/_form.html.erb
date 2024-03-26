@@ -1,0 +1,11 @@
+<h1><%= question_header(@question) %></h1>
+
+<%= form_with(model:[:admin, @test, @question]) do |form| %>
+  <%= render 'shared/errors', resource: @question %>
+  <p>
+    <%= form.label :body, 'Question'%>
+    <%= form.text_area :body, rows: 2, id: :question_body %>
+  </p>
+
+  <p><%= form.submit 'Сохранить' %></p> 
+<% end %>

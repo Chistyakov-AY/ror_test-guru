@@ -1,6 +1,6 @@
 <tr>
   <td><%= test.id %></td>
-  <td><%= link_to test.title, admin_test_path(test) %> (<%= test.questions.count %>) </td> 
+  <td><%= test.title %></td> 
   <td><%= test.level %></td>
   <td><%= button_to 'Start', start_test_path(test) %></td>
 </tr>

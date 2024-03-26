@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root 'tests#index'
+  root 'admin/tests#index'
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
   
@@ -27,8 +27,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :questions
-  resources :answers
+  # resources :questions, only: :index
+  # resources :answers, only: :index
 
   resources :test_passages, only: %i[show update] do
     member do
@@ -42,6 +42,9 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
-  end
 
+    resources :users, only: %i[ index destroy ]
+    resources :questions, only: :index
+    resources :answers, only: :index
+  end
 end
