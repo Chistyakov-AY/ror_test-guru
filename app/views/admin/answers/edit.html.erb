@@ -1,8 +1,2 @@
-<h1>Editing Answer</h1>
-
-<p>
-  Current question: <%= @answer.question.body %>
-</p>
-
 <%= render 'form'%>
 <%= link_to 'Back', admin_question_path(@answer.question_id) %>

@@ -6,5 +6,4 @@ module QuestionsHelper
       "Create New Question"
     end
   end
-
 end

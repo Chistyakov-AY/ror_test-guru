@@ -11,7 +11,7 @@ class Admin::UsersController < Admin::BaseController
     redirect_to admin_users_path, notice: "User '#{@user.email}' was successfully destroy."
   end
 
-  # private
+  private
 
   # def test_params
   #   params.require(:user).permit(:first_name, :last_name, :email)

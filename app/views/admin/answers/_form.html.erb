@@ -1,3 +1,5 @@
+<h1><%= answer_header(@answer) %></h1>
+
 <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
   <%= render 'shared/errors', resource: @answer %>
 
