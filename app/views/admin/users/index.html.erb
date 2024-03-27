@@ -1,0 +1,16 @@
+<h1> All Users: </h1>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>Type</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>email</th>
+    <th colspan="2">Actions</th>
+  </tr>
+  <%= render partial: 'admin/users/user', collection: @users %>
+</table>
+<p>
+<%= link_to 'Back', admin_tests_path %>
+</p>

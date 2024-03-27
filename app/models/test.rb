@@ -3,12 +3,12 @@ class Test < ApplicationRecord
   validates :title, uniqueness: { scope: :level}
   validates :level, numericality: { greater_than_or_equal_to: 0 }
   
-  has_many :test_passages
-  has_many :users, through: :test_passages
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages, dependent: :destroy
   
   belongs_to :author, class_name: "User", foreign_key: "user_id"
   belongs_to :category
-  has_many :questions
+  has_many :questions, dependent: :destroy
 
   scope :list_of_level_tests, -> (level) { where(level: level) }
   scope :simple_tests, -> { list_of_level_tests(0..1) }

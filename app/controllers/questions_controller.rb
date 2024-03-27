@@ -1,8 +1,8 @@
 class QuestionsController < ApplicationController
-  before_action :find_question, only: %i[show destroy edit update]
+  # before_action :find_question, only: %i[show destroy edit update]
   before_action :find_test, only: %i[new create]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
   
   def index
     @questions = Question.all
@@ -11,8 +11,8 @@ class QuestionsController < ApplicationController
   # def show
   # end
 
-  def edit
-  end
+  # def edit
+  # end
 
   def new
     @question = @test.questions.new
@@ -22,24 +22,24 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully created."
+      redirect_to admin_test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully created."
     else
       render :new
     end
   end
 
-  def update
-    if @question.update(question_params)
-      redirect_to test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully update."
-    else
-      render :edit
-    end
-  end
+  # def update
+  #   if @question.update(question_params)
+  #     redirect_to tests_path(@question.test_id), notice: "Question '#{@question.body}' was successfully update."
+  #   else
+  #     render :edit
+  #   end
+  # end
 
-  def destroy
-    @question.destroy
-    redirect_to test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully destroy."
-  end
+  # def destroy
+  #   @question.destroy
+  #   redirect_to test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully destroy."
+  # end
 
   private
   
@@ -55,7 +55,7 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:body)
   end
 
-  def rescue_with_question_not_found
-    render plain: 'Вопрос не найден!'
-  end
+  # def rescue_with_question_not_found
+  #   render plain: 'Вопрос не найден!'
+  # end
 end

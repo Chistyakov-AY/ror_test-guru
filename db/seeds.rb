@@ -13,17 +13,17 @@ Test.destroy_all
 Category.destroy_all
 User.destroy_all
 
-u1 = User.create(title: 'Александр', email: 'alex@mail.ru', password_digest: '1')
-u2 = User.create(title: 'Владимир', email: 'vlad@gmail.ru', password_digest: '2')
-u3 = User.create(title: 'Денис', email: 'dan@yandex.ru', password_digest: '3')
+u1 = User.create(title: 'Александр', email: 'alex@mail.ru')
+# u2 = User.create(title: 'Владимир', email: 'vlad@gmail.ru', password_digest: '2')
+# u3 = User.create(title: 'Денис', email: 'dan@yandex.ru', password_digest: '3')
 
 c1 = Category.create(title: 'Backend')
 c2 = Category.create(title: 'Frontend')
 c3 = Category.create(title: 'Fullstack')
 
 t1 = Test.create(title: 'Ruby', level: 1, category_id: c1.id, user_id: u1.id)
-t2 = Test.create(title: 'Java', level: 2, category_id: c3.id, user_id: u2.id)
-t3 = Test.create(title: 'HTML', category_id: c2.id, user_id: u3.id)
+t2 = Test.create(title: 'Java', level: 2, category_id: c3.id, user_id: u1.id)
+t3 = Test.create(title: 'HTML', category_id: c2.id, user_id: u1.id)
 t4 = Test.create(title: 'Go', level: 3, category_id: c1.id, user_id: u1.id)
 
 q1 = Question.create(body: 'Как преобразовать переменную из строки в символ?', test_id: t1.id)
