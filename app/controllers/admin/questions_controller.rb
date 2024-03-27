@@ -30,7 +30,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(question_params)
-      redirect_to tests_path(@question.test_id), notice: "Question '#{@question.body}' was successfully update."
+      redirect_to admin_test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully update."
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def destroy
     @question.destroy
-    redirect_to test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully destroy."
+    redirect_to admin_test_path(@question.test_id), notice: "Question '#{@question.body}' was successfully destroy."
   end
 
   private

@@ -17,7 +17,7 @@ class Admin::AnswersController < Admin::BaseController
     @answer = @question.answers.new(answer_params)
   
     if @answer.save
-      redirect_to question_path(@answer.question_id), notice: "Answer '#{@answer.body}' was successfully created."
+      redirect_to admin_question_path(@question), notice: "Answer '#{@answer.body}' was successfully created."
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to question_path(@answer.question_id), notice: "Answer '#{@answer.body}' was successfully updated."
+      redirect_to admin_question_path(@answer.question_id), notice: "Answer '#{@answer.body}' was successfully updated."
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def destroy
     @answer.destroy
-    redirect_to question_path(@answer.question_id), notice: "Answer '#{@answer.body}' was successfully destroy."
+    redirect_to admin_question_path(@answer.question_id), notice: "Answer '#{@answer.body}' was successfully destroy."
   end
 
   private

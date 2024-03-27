@@ -16,19 +16,10 @@ Rails.application.routes.draw do
       resources :answers, except: :index, shallow: true
     end
 
-    # resources :tests, only: :index do
-    #   member do
-    #     post :start
-    #   end
-    # end
-  
     member do
       post :start
     end
   end
-
-  # resources :questions, only: :index
-  # resources :answers, only: :index
 
   resources :test_passages, only: %i[show update] do
     member do
@@ -43,7 +34,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :users, only: %i[ index destroy ]
+    resources :users, only: %i[ index destroy create]
     resources :questions, only: :index
     resources :answers, only: :index
   end

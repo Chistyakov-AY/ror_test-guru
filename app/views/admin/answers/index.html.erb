@@ -1,28 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<h1>All Answers</h1>
+<h1> All Answers: </h1>
 
 <table>
   <thead>
     <tr>
-      <th> Id </th>
-      <th> Body </th>
-      <th> Question_id </th>
-      <th colspan="2"> Action </th>
+      <th>id</th>
+      <th>Body</th>
+      <th>Correct</th>
+      <th>Created_at</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @answers.each do |answer| %>
+    <% @answers.each do |answers| %>
       <tr>
-        <td><%= answer.id %></td>
-        <td><%= answer.body%> (<%= answer.correct %>) </td>
-        <td><%= answer.question_id %></td>
-        <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
-        <td><%= link_to 'Delete', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= answers.id %></td>
+        <td><%= answers.body%></td>
+        <td><%= answers.correct %></td>
+        <td><%= answers.created_at %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<p>
 <%= link_to 'Back', admin_tests_path %>
+</p>
