@@ -1,0 +1,27 @@
+<h1> All Answers: </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Body</th>
+      <th>Correct</th>
+      <th>Created_at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @answers.each do |answers| %>
+      <tr>
+        <td><%= answers.id %></td>
+        <td><%= answers.body%></td>
+        <td><%= answers.correct %></td>
+        <td><%= answers.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+<%= link_to 'Back', admin_tests_path %>
+</p>

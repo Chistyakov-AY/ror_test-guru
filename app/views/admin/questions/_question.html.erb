@@ -1,0 +1,13 @@
+<tr>
+  <td><%= question.id %></td>
+  <td><%= question.body%> (<%= question.answers.count %>)</td>
+  <td><%= question.test_id %></td>
+  <td><%= question.created_at %></td>
+  <td><%= link_to 'Show', admin_question_path(question) %></td> 
+  <td><%= link_to 'Edit', edit_admin_question_path(question) %></td> 
+  <td><%= link_to 'Delete',
+                admin_question_path(question),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>
