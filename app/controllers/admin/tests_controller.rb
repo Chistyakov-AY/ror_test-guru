@@ -43,6 +43,6 @@ private
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, author: :current_user)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 end
