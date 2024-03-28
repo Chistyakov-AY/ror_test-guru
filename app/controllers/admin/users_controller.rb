@@ -13,14 +13,6 @@ class Admin::UsersController < Admin::BaseController
 
   private
 
-  # def test_params
-  #   params.require(:user).permit(:first_name, :last_name, :email)
-  # end
-
-  # def find_user
-  #   @user = User.first
-  # end
-
   def find_user
     @user = User.find(params[:id])    
   end

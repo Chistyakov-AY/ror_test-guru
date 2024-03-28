@@ -1,5 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-  # before_action :authenticate_user!
+
   before_action :find_test, only: %i[show edit update destroy]
   
   def new 
@@ -14,10 +14,10 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.author_tests.new(test_params)
 
     if @test.save
-      redirect_to admin_tests_path(@test)
+      redirect_to admin_tests_path(@test), notice: "Test '#{@test.title}' was successfully created."
     else
       render new_admin_test_path
     end
@@ -31,14 +31,9 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
-  # def start
-  #   current_user.tests.push(@test)
-  #   redirect_to current_user.test_passage(@test)
-  # end
-
   def destroy
     @test.destroy
-    redirect_to admin_tests_path
+    redirect_to admin_tests_path, notice: "Test '#{@test.title}' was successfully deleted."
   end
   
 private
@@ -47,11 +42,7 @@ private
     @test = Test.find(params[:id])    
   end
 
-  # def find_user
-  #   @user = User.first
-  # end
-
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :user_id)
+    params.require(:test).permit(:title, :level, :category_id, author: :current_user)
   end
 end
