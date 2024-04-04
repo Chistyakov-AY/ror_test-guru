@@ -20,10 +20,16 @@ en:
     tests:
       create:
         success: "Test was successfully created!"
+      update:
+        success: "Test was successfully update!"
+      destroy:
+        success: "Test was successfully destroy!"
       index:
         header: "List of all tests:"
     users:
       index:
         header: "All Users:"
+      destroy:
+        success: "User was successfully destroy!"
 
   
