@@ -10,25 +10,102 @@ ru:
       test:
         create: "Создать Тест"
         update: "Обновить Тест"
+      question:
+        create: "Создать Вопрос"
+        update: "Обновить Вопрос"
+      answer:
+        create: "Создать Ответ"
+        update: "Обновить Ответ"
     label:
+      all_users:
+        id: "Номер:"
+        type: "Тип:"
+        first_name: "Имя:"
+        last_name: "Фамилия:"
+        email: "Адрес эл. почты:"
+        action: "Действия:"
       test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      all_tests:
+        id: "Номер:"
+        title: "Тесты(вопросы):"
+        level: "Уровень:"
+        author: "Автор:"
+        created_at: "Создан/Изменен:"
+        action: "Действия:"
+      show_test:
+        id: "Номер:"
+        body: "Вопросы(ответы):"
+        test_id: "Номер Теста:"
+        created_at: "Создан/Изменен:"
+        actions: "Действия:"
+      question:
+        body: "Вопрос:"
+      all_questions:
+        id: "Номер:"
+        body: "Вопросы:"
+        test_id: "Номер Теста:"
+        created_at: "Создан/Изменен:"
+      show_question:
+        id: "Номер:"
+        body: "Ответы:"
+        correct: "Корректный:"
+        created_at: "Создан/Изменен:"
+        actions: "Действия:"
+      answer:
+        body: "Ответ:"
+        correct: "Корректность:"
+      all_answers:
+        id: "Номер:"
+        body: "Ответ:"
+        correct: "Корректность:"
+        created_at: "Создан:"
+    tests:
+      header_create: "Создать новый Тест"
+      header_update: "Изменить Тест"
+    questions:
+      header_create: "Создать новый Вопрос"
+      header_update: "Изменить Вопрос"
+    answers:
+      header_create: "Создать новый Ответ"
+      header_update: "Изменить Ответ"
   
   admin:
+    users:
+      index:
+        header: "Все пользователи:"
+      destroy:
+        success: "Пользователь успешно удален!"
     tests:
+      index:
+        header: "Список всех тестов:"
+      show:
+        header: "Вопросы к Тесту !!!!!!"
       create:
         success: "Тест успешно создан!"
       update:
         success: "Тест успешно обновлен!"
       destroy:
         success: "Тест успешно удален!"
+    questions:
       index:
-        header: "Список всех тестов:"
-    users:
-      index:
-        header: "Все пользователи:"
+        header: "Список всех вопросов:"
+      show:
+        header: "Все ответы к вопросу !!!!!!"
+      create:
+        success: "Вопрос успешно создан!"
+      update:
+        success: "Вопрос успешно обновлен!"
       destroy:
-        success: "Пользователь успешно удален!"
-    
+        success: "Вопрос успешно удален!"
+    answers:
+      index:
+        header: "Список всех ответов:"
+      create:
+        success: "Ответ успешно создан!"
+      update:
+        success: "Ответ успешно обновлен!"
+      destroy:
+        success: "Ответ успешно удален!"

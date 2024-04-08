@@ -10,26 +10,102 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update Answer"
     label:
+      all_users:
+        id: "Number:"
+        type: "Type:"
+        first_name: "First name:"
+        last_name: "Last name:"
+        email: "Email:"
+        action: "Actions:"
       test:
         title: "Title"
         level: "Level"
         category_id: "Category"
+      all_tests:
+        id: "Id:"
+        title: "Titles(questions):"
+        level: "Level:"
+        author: "Author:"
+        created_at: "Created_at:"
+        action: "Action:"
+      show_test:
+        id: "Id:"
+        body: "Questions(answers):"
+        test_id: "Test number:"
+        created_at: "Created at:"
+        actions: "Actions:"
+      question:
+        body: "Question:"
+      all_questions:
+        id: "Id:"
+        body: "Question:"
+        test_id: "Test number:"
+        created_at: "Created at:"
+      show_question:
+        id: "Id:"
+        body: "Answers:"
+        correct: "Correct:"
+        created_at: "Created at:"
+        actions: "Actions:"
+      answer:
+        body: "Answer:"
+        correct: "Correct:"
+      all_answers:
+        id: "Id:"
+        body: "Answer:"
+        correct: "Correct:"
+        created_at: "Created at:"
+    tests:
+      header_create: "Create new Test"
+      header_update: "Update Test"
+    questions:
+      header_create: "Create new Question"
+      header_update: "Update Question"
+    answers:
+      header_create: "Create new Answer"
+      header_update: "Update Answer"
 
   admin:
+    users:
+      index:
+        header: "All Users:"
+      destroy:
+        success: "User was successfully destroy!"
     tests:
+      index:
+        header: "List of all tests:"
+      show:
+        header: "All questions !!!!!!"
       create:
         success: "Test was successfully created!"
       update:
         success: "Test was successfully update!"
       destroy:
         success: "Test was successfully destroy!"
+    questions:
       index:
-        header: "List of all tests:"
-    users:
-      index:
-        header: "All Users:"
+        header: "All Questions:"
+      show:
+        header: "All answers !!!!!!"
+      create:
+        success: "Question was successfully created!"
+      update:
+        success: "Question was successfully update!"
       destroy:
-        success: "User was successfully destroy!"
-
-  
+        success: "Question was successfully destroy!"
+    answers:
+      index:
+        header: "All Answers:"
+      create:
+        success: "Answer was successfully created!"
+      update:
+        success: "Answer was successfully update!"
+      destroy:
+        success: "Answer was successfully destroy!"

@@ -3,9 +3,9 @@
 <%= form_with model:[:admin, @test, @question] do |form| %>
   <%= render 'shared/errors', resource: @question %>
   <p>
-    <%= form.label :body, 'Question'%>
+    <%= form.label :body %>
     <%= form.text_area :body, rows: 2, id: :question_body %>
   </p>
 
-  <p><%= form.submit 'Сохранить' %></p> 
+  <p><%= form.submit %></p> 
 <% end %>

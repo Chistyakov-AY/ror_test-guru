@@ -2,12 +2,12 @@
 
 <table>
   <tr>
-    <th>id</th>
-    <th>Title(questions)</th>
-    <th>Level</th>
-    <th>Author</th>
-    <th>created_at</th>
-    <th colspan="3">Actions</th>
+    <th><%= t('helpers.label.all_tests.id') %></th>
+    <th><%= t('helpers.label.all_tests.title') %></th>
+    <th><%= t('helpers.label.all_tests.level') %></th>
+    <th><%= t('helpers.label.all_tests.author') %></th>
+    <th><%= t('helpers.label.all_tests.created_at') %></th>
+    <th colspan="3"><%= t('helpers.label.all_tests.action') %></th>
   </tr>
   <%= render @tests%>
 </table>

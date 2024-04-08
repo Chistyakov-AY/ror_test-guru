@@ -1,9 +1,9 @@
 module AnswersHelper
   def answer_header(answer)
     if answer.persisted?
-      "Edit answer '#{answer.body}'"
+      t('helpers.questions.header_update')
     else
-      "Create New Answer"
+      t('helpers.questions.header_create')
     end
   end
 end

@@ -1,14 +1,14 @@
 <p>  Test: "<%= @question.test.title %>" </p>
 <p> Current question: <%= @question.body %></p>
 
-<h2>Answers:</h2>
+<h2><%= t('.header') %></h2>
 <table>
   <tr>
-    <th>id</th>
-    <th>Body</th>
-    <th>Correct</th>
-    <th>created_at</th>
-    <th colspan="2">Actions</th>
+    <th><%= t('helpers.label.show_question.id') %></th>
+    <th><%= t('helpers.label.show_question.body') %></th>
+    <th><%= t('helpers.label.show_question.correct') %></th>
+    <th><%= t('helpers.label.show_question.created_at') %></th>
+    <th colspan="2"><%= t('helpers.label.show_question.actions') %></th>
   </tr>
 
 <%= render partial: 'admin/answers/answer', collection: @question.answers %>

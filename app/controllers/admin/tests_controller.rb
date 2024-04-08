@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::BaseController
     if @test.save
       redirect_to admin_tests_path(@test), notice: t('.success')
     else
-      render new_admin_test_path
+      render :new
     end
   end
 
@@ -27,13 +27,13 @@ class Admin::TestsController < Admin::BaseController
     if @test.update(test_params)
       redirect_to admin_tests_path(@test), notice: t('.success')
     else
-      render new_admin_test_path
+      render :edit
     end
   end
 
   def destroy
     @test.destroy
-    redirect_to admin_tests_path, notice: t('.success') #"Test '#{@test.title}' was successfully deleted."
+    redirect_to admin_tests_path, notice: t('.success')
   end
   
 private
