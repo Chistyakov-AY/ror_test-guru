@@ -2,11 +2,21 @@ ru:
   activerecord:
     models:
       test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
 
-  attributes:
-    test:
-      title: "Название"
+    attributes:
+      test:
+        title: "Название теста"
+        category: "Категория"
+        author: "Автор"
+      question:
+        body: "Название вопроса"
+      answer:
+        body: "Название ответа"
 
-  errors:
-    messages:
-      blank: "не может быть пустым"
+    errors:
+      messages:
+        blank: "не может быть пустым"
+        taken: "не уникален"
+        invalid: "неверный формат"

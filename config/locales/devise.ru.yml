@@ -60,6 +60,4 @@ ru:
       not_locked: "не заблокирована"
       not_saved:
         one: "%{resource}: сохранение не удалось из-за %{count} ошибки"
-        few: "%{resource}: сохранение не удалось из-за %{count} ошибок"
-        many: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         other: "%{resource}: сохранение не удалось из-за %{count} ошибки"

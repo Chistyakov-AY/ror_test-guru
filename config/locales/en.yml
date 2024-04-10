@@ -1,9 +1,36 @@
 en:
   hello: "Hello world"
 
+  test_passages:
+    result:
+      header: "Test '%{test}' was completed!"
+      final_result: "Result: %{result} %"
+      passed: "Congratulations, Test passed!"
+      failed: "Test failed!"
+      correct_answers: "Correct answers: %{count}"
+      all_questions: "Total questions: %{count}"
+    show:
+      header: "Passing Test '%{test}'. Good luck!"
+      total_questions: "Total questions: %{count}"
+      question_number: "Question №- %{count} :"
+
   tests:
     index:
       header: "All tests:"
+      id: "Id:"
+      title: "Title:"
+      level: "Level:"
+      action: "Actions:"
+  
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
 
   helpers:
     submit:
@@ -64,13 +91,13 @@ en:
         created_at: "Created at:"
     tests:
       header_create: "Create new Test"
-      header_update: "Update Test"
+      header_update: "Update Test '%{test}'"
     questions:
       header_create: "Create new Question"
-      header_update: "Update Question"
+      header_update: "Update Question '%{question}'"
     answers:
       header_create: "Create new Answer"
-      header_update: "Update Answer"
+      header_update: "Update Answer '%{answer}'"
 
   admin:
     users:
@@ -82,7 +109,7 @@ en:
       index:
         header: "List of all tests:"
       show:
-        header: "All questions !!!!!!"
+        header: "All questions for Test '%{test}':"
       create:
         success: "Test was successfully created!"
       update:
@@ -93,7 +120,7 @@ en:
       index:
         header: "All Questions:"
       show:
-        header: "All answers !!!!!!"
+        header: "All answers '%{question}'"
       create:
         success: "Question was successfully created!"
       update:

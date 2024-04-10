@@ -1,7 +1,6 @@
-<p>  Test: "<%= @question.test.title %>" </p>
-<p> Current question: <%= @question.body %></p>
+<h3> "<%= @question.test.title %>" </h3>
 
-<h2><%= t('.header') %></h2>
+<h2><%= t('.header', question: @question.body) %></h2>
 <table>
   <tr>
     <th><%= t('helpers.label.show_question.id') %></th>

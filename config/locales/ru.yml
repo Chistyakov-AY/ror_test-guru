@@ -1,9 +1,38 @@
 ru:
   hello: "Привет мир!"
 
+  test_passages:
+    result:
+      header: "Тест '%{test}' успешно завершен!"
+      final_result: "Результат: %{result} %"
+      passed: "Поздравляю, Тест пройден!"
+      failed: "Тест провален!"
+      correct_answers: "Правильных ответов: %{count}"
+      all_questions: "Всего вопросов: %{count}"
+    show:
+      header: "Прохождение Теста '%{test}'. Удачи!"
+      total_questions: "Всего вопросов: %{count}"
+      question_number: "Вопрос №- %{count} :"
+
   tests:
     index:
       header: "Доступные Тесты:"
+      id: "Номер:"
+      title: "Название Теста:"
+      level: "Уровень:"
+      action: "Действия:"
+  
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
   
   helpers:
     submit:
@@ -64,13 +93,13 @@ ru:
         created_at: "Создан:"
     tests:
       header_create: "Создать новый Тест"
-      header_update: "Изменить Тест"
+      header_update: "Изменить Тест '%{test}'"
     questions:
       header_create: "Создать новый Вопрос"
-      header_update: "Изменить Вопрос"
+      header_update: "Изменить Вопрос '%{question}'"
     answers:
       header_create: "Создать новый Ответ"
-      header_update: "Изменить Ответ"
+      header_update: "Изменить Ответ '%{answer}'"
   
   admin:
     users:
@@ -82,7 +111,7 @@ ru:
       index:
         header: "Список всех тестов:"
       show:
-        header: "Вопросы к Тесту !!!!!!"
+        header: "Вопросы к Тесту '%{test}':"
       create:
         success: "Тест успешно создан!"
       update:
@@ -93,7 +122,7 @@ ru:
       index:
         header: "Список всех вопросов:"
       show:
-        header: "Все ответы к вопросу !!!!!!"
+        header: "Все ответы к вопросу '%{question}'"
       create:
         success: "Вопрос успешно создан!"
       update:

@@ -1,9 +1,9 @@
 module AnswersHelper
   def answer_header(answer)
     if answer.persisted?
-      t('helpers.questions.header_update')
+      t('helpers.answers.header_update', answer: @answer.body)
     else
-      t('helpers.questions.header_create')
+      t('helpers.answers.header_create')
     end
   end
 end
