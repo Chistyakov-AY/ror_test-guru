@@ -1,0 +1,10 @@
+<% if resource.errors.present? %>
+  <div>
+    <%= t('.header', count: resource.errors.count) %>:
+    <ol>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ol>
+  </div>
+<% end %>

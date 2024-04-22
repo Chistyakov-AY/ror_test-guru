@@ -1,0 +1,13 @@
+<tr>
+  <td><%= question.id %></td>
+  <td><%= question.body%> (<%= question.answers.count %>)</td>
+  <td><%= question.test_id %></td>
+  <td><%= question.created_at %></td>
+  <td><%= link_to t('helpers.buttons.show'), admin_question_path(question) %></td> 
+  <td><%= link_to t('helpers.buttons.edit'), edit_admin_question_path(question) %></td> 
+  <td><%= link_to t('helpers.buttons.delete'),
+                admin_question_path(question),
+                method: :delete,
+                data: { confirm: t('admin.users.destroy.confirm') } %>
+  </td>
+</tr>

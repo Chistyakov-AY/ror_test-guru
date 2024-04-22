@@ -1,0 +1,13 @@
+.flash {
+  border: 2px, solid;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.flash.notice {
+  border-color: #1d983e;
+}
+
+.flash.alert {
+  border-color: #b30e0e;
+}

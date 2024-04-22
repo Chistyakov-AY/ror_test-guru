@@ -1,0 +1,26 @@
+<h2><%= t('.header', test: @test_passage.test.title) %></h2>
+
+<b>
+<% @test_passage.test.question_ids.each_with_index do |num, index| %>
+  <% if "#{num}" == "#{@test_passage.current_question.id}" %>
+    <%= t('.total_questions', count: @test_passage.test.question_ids.size) %><br>
+    <%= t('.question_number', count: "#{index + 1}") %>
+      <b>
+        "<%= @test_passage.current_question.body %>" 
+      </b>
+  <% end %>
+<% end %>
+</b><br>
+
+<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+    <p>  
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+  <% end %>
+
+  <p><%= form.submit %></p>
+<% end %>
+
+<%= link_to t('helpers.buttons.back'), tests_path %>

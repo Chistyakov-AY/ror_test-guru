@@ -1,0 +1,22 @@
+en:
+  activerecord:
+    models:
+      test: "Test"
+      question: "Question"
+      answer: "Answer"
+
+    attributes:
+      test:
+        title: "Title"
+        category: "Category"
+        author: "Author"
+      question:
+        body: "Body"
+      answer:
+        body: "Body"
+
+    errors:
+      messages:
+        blank: "can't be blank"
+        taken: "not unique"
+        invalid: "wrong format"

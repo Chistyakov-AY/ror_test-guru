@@ -1,0 +1,27 @@
+<h1><%= t('.header') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('helpers.label.all_answers.id') %></th>
+      <th><%= t('helpers.label.all_answers.body') %></th>
+      <th><%= t('helpers.label.all_answers.correct') %></th>
+      <th><%= t('helpers.label.all_answers.created_at') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @answers.each do |answers| %>
+      <tr>
+        <td><%= answers.id %></td>
+        <td><%= answers.body%></td>
+        <td><%= answers.correct %></td>
+        <td><%= answers.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+<%= link_to t('helpers.buttons.back'), admin_tests_path %>
+</p>

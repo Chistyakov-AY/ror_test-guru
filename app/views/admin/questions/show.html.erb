@@ -1,0 +1,19 @@
+<h3> "<%= @question.test.title %>" </h3>
+
+<h2><%= t('.header', question: @question.body) %></h2>
+<table>
+  <tr>
+    <th><%= t('helpers.label.show_question.id') %></th>
+    <th><%= t('helpers.label.show_question.body') %></th>
+    <th><%= t('helpers.label.show_question.correct') %></th>
+    <th><%= t('helpers.label.show_question.created_at') %></th>
+    <th colspan="2"><%= t('helpers.label.show_question.actions') %></th>
+  </tr>
+
+<%= render partial: 'admin/answers/answer', collection: @question.answers %>
+</table>
+
+<p>
+<%= link_to t('helpers.buttons.back'), admin_test_path(@question.test_id) %> |
+<%= link_to t('admin.questions.show.new'), new_admin_question_answer_path(@question) %>
+</p>

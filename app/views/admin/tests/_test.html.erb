@@ -1,0 +1,13 @@
+<tr>
+  <td><%= test.id %></td>
+  <td><%= test.title %>(<%= test.questions.count %>)</td> 
+  <td><%= test.level %></td>
+  <td><%= test.author.first_name %></td>
+  <td><%= test.created_at %></td>
+  <td><%= link_to t('helpers.buttons.show'), admin_test_path(test) %></td>
+  <td><%= link_to t('helpers.buttons.edit'), edit_admin_test_path(test) %></td> 
+  <td><%= link_to t('helpers.buttons.delete'), 
+                        admin_test_path(test), 
+                        method: :delete, 
+                        data: {confirm: t('admin.users.destroy.confirm')} %></td>
+</tr>

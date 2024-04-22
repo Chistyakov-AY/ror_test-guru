@@ -1,0 +1,15 @@
+<h1><%= t('.header', test: @test_passage.test.title) %></h1>
+
+<% if @test_passage.test_passed? %>
+  <p style="color:green;"><%= t('.final_result', result: @test_passage.result_calculation) %></p>
+  <p style="color:green;"><%= t('.passed') %></p>
+<% else %>
+  <p style="color:red;"><%= t('.final_result', result: @test_passage.result_calculation) %></p>
+  <p style="color:red;"><%= t('.failed') %></p>
+<% end %>
+
+<p><%= t('.correct_answers', count: @test_passage.correct_questions) %> </p>
+<p><%= t('.all_questions', count: @test_passage.test.questions.count) %> </p>
+
+<%= link_to t('helpers.buttons.back'), tests_path %>
+

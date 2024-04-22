@@ -1,0 +1,8 @@
+<tr>
+  <td><%= user.id %></td>
+  <td><%= user.type %></td>
+  <td><%= user.first_name %></td> 
+  <td><%= user.last_name %></td> 
+  <td><%= user.email%></td>
+  <td><%= link_to t('helpers.buttons.delete'), admin_user_path(user), method: :delete, data: {confirm: "Are you sure?"} %></td>
+</tr>
