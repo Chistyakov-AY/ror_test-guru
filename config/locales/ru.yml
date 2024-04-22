@@ -52,6 +52,7 @@ ru:
       edit: "Изменить"
       back: "Назад"
       delete: "Удалить"
+    submit:
       test:
         create: "Создать Тест"
         update: "Обновить Тест"
