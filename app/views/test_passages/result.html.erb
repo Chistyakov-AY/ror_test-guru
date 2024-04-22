@@ -11,5 +11,5 @@
 <p><%= t('.correct_answers', count: @test_passage.correct_questions) %> </p>
 <p><%= t('.all_questions', count: @test_passage.test.questions.count) %> </p>
 
-<%= link_to 'Back', tests_path %>
+<%= link_to t('helpers.buttons.back'), tests_path %>
 

@@ -4,7 +4,6 @@ ru:
       test: "Тест"
       question: "Вопрос"
       answer: "Ответ"
-
     attributes:
       test:
         title: "Название теста"
@@ -14,7 +13,6 @@ ru:
         body: "Название вопроса"
       answer:
         body: "Название ответа"
-
     errors:
       messages:
         blank: "не может быть пустым"

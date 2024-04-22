@@ -12,8 +12,8 @@
   <%= render @tests%>
 </table>
 <p>
-<%= link_to 'All users', admin_users_path %> |
-<%= link_to 'All questions', admin_questions_path %> |
-<%= link_to 'All answers', admin_answers_path %> |
-<%= link_to 'Create new test', new_admin_test_path(@test) %>
+<%= link_to t('admin.users.index.users'), admin_users_path %> |
+<%= link_to t('admin.users.index.questions'), admin_questions_path %> |
+<%= link_to t('admin.users.index.answers'), admin_answers_path %> |
+<%= link_to t('admin.users.index.new'), new_admin_test_path(@test) %>
 </p>

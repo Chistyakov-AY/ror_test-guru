@@ -1,6 +1,9 @@
 ru:
   hello: "Привет мир!"
 
+  base_controller:
+    alert: "Авторизируйтесь под администратором!"
+
   test_passages:
     result:
       header: "Тест '%{test}' успешно завершен!"
@@ -13,6 +16,14 @@ ru:
       header: "Прохождение Теста '%{test}'. Удачи!"
       total_questions: "Всего вопросов: %{count}"
       question_number: "Вопрос №- %{count} :"
+  
+  devise:
+    sessions:
+      header: "Вход на '%{resource}'"
+      email: "Логин"
+      pass: "Пароль"
+      remember: "Запомни меня"
+   
 
   tests:
     index:
@@ -21,7 +32,8 @@ ru:
       title: "Название Теста:"
       level: "Уровень:"
       action: "Действия:"
-  
+      button: "Старт"
+
   shared:
     errors:
       header:
@@ -35,7 +47,11 @@ ru:
       subject: "Вы успешно завершили тест на TestGuru!"
   
   helpers:
-    submit:
+    buttons:
+      show: "Показать"
+      edit: "Изменить"
+      back: "Назад"
+      delete: "Удалить"
       test:
         create: "Создать Тест"
         update: "Обновить Тест"
@@ -102,15 +118,25 @@ ru:
       header_update: "Изменить Ответ '%{answer}'"
   
   admin:
+    nav: 
+      header: "ТестГуру Панель администратора"
+      log: "Выход"
+      welcome: "Добро пожаловать %{wel}, Гуру!"
     users:
       index:
+        users: "Все пользователи"
+        questions: "Все вопросы"
+        answers: "Все ответы"
+        new: "Создать новый тест"
         header: "Все пользователи:"
       destroy:
+        confirm: "Вы уверены, что хотите удалить?"
         success: "Пользователь успешно удален!"
     tests:
       index:
         header: "Список всех тестов:"
       show:
+        new: "Создать новый вопрос"
         header: "Вопросы к Тесту '%{test}':"
       create:
         success: "Тест успешно создан!"
@@ -122,6 +148,7 @@ ru:
       index:
         header: "Список всех вопросов:"
       show:
+        new: "Создать новый ответ"
         header: "Все ответы к вопросу '%{question}'"
       create:
         success: "Вопрос успешно создан!"

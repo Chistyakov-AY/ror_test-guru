@@ -1,6 +1,9 @@
 en:
   hello: "Hello world"
 
+  base_controller:
+    alert: "You are not authtorized to view admin page!"
+
   test_passages:
     result:
       header: "Test '%{test}' was completed!"
@@ -14,6 +17,12 @@ en:
       total_questions: "Total questions: %{count}"
       question_number: "Question №- %{count} :"
 
+  devise:
+    sessions:
+      header: "Entrance to '%{resource}'"
+      email: "Email"
+      pass: "Password"
+      remember: "Remember me"
   tests:
     index:
       header: "All tests:"
@@ -21,6 +30,7 @@ en:
       title: "Title:"
       level: "Level:"
       action: "Actions:"
+      button: "Start"
   
   shared:
     errors:
@@ -33,6 +43,11 @@ en:
       subject: "You just completed the TestGuru test!"
 
   helpers:
+    buttons:
+      back: "Back"
+      delete: "Delete"
+      back: "Back"
+      delete: "Delete"
     submit:
       test:
         create: "Create Test"
@@ -100,15 +115,25 @@ en:
       header_update: "Update Answer '%{answer}'"
 
   admin:
+    nav:
+      header: "TestGuru Admin Panel"
+      log: "logout"
+      welcome: "Welcome %{wel} Guru"
     users:
       index:
+        users: "All users"
+        questions: "All questions"
+        answers: "All answers"
+        new: "Create new test"
         header: "All Users:"
       destroy:
+        confirm: "Are you sure?"
         success: "User was successfully destroy!"
     tests:
       index:
         header: "List of all tests:"
       show:
+        new: "Create new question"
         header: "All questions for Test '%{test}':"
       create:
         success: "Test was successfully created!"
@@ -120,6 +145,7 @@ en:
       index:
         header: "All Questions:"
       show:
+        new: "Create new answer"
         header: "All answers '%{question}'"
       create:
         success: "Question was successfully created!"

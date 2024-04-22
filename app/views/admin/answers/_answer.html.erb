@@ -3,9 +3,9 @@
   <td><%= answer.body%></td>
   <td><%= answer.correct %></td>
   <td><%= answer.created_at %></td>
-  <td><%= link_to 'Edit', edit_admin_answer_path(answer) %></td> 
-  <td><%= link_to 'Delete',
+  <td><%= link_to t('helpers.buttons.edit'), edit_admin_answer_path(answer) %></td> 
+  <td><%= link_to t('helpers.buttons.delete'),
                 admin_answer_path(answer),
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %>
+                data: { confirm: t('admin.users.destroy.confirm') } %>
 </tr>

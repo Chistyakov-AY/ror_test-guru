@@ -8,6 +8,6 @@ class Admin::BaseController < ApplicationController
   private
 
   def admin_required!
-    redirect_to tests_path, alert: 'You are not authtorized to view admin page.' unless current_user.admin?
+    redirect_to tests_path, alert: t('base_controller.alert') unless current_user.admin?
   end
 end
