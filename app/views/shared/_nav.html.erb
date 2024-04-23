@@ -1,6 +1,9 @@
 <nav class="navbar navbar-light bg-primary">
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %> 
-  <%= link_to 'AdminTestGuru', admin_tests_path, class: 'navbar-brand' %> 
+  
+  <% if current_user != nil && current_user.admin? %>
+    <%= link_to 'AdminTestGuru', admin_tests_path, class: 'navbar-brand' %> 
+  <% end %>
   
   <span class="navbar-text">
     <% if user_signed_in? %>
