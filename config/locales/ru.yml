@@ -23,8 +23,9 @@ ru:
       email: "Логин"
       pass: "Пароль"
       remember: "Запомни меня"
+      enter: "Ввод"
+      enter_email: "Введите майл"
    
-
   tests:
     index:
       header: "Доступные Тесты:"
@@ -41,6 +42,9 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    nav:
+      log_in: "Вход"
+      sign_up: "Регистрация"
 
   tests_mailer:
     completed_test:

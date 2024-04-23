@@ -11,13 +11,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="bg-info">
     <%= render 'shared/nav' %>
 
     <div class="container">
       <%= render 'shared/flash' %>
       <%= yield %>
+      <%= render "layouts/footer" %>
     </div>
   </body>
-  <%= render "layouts/footer" %>
 </html>

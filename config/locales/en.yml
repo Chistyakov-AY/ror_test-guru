@@ -23,6 +23,9 @@ en:
       email: "Email"
       pass: "Password"
       remember: "Remember me"
+      enter: "Enter"
+      enter_email: "Enter email"
+
   tests:
     index:
       header: "All tests:"
@@ -37,6 +40,9 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav:
+      log_in: "Log in"
+      sign_up: "Sign up"
 
   tests_mailer:
     completed_test:
