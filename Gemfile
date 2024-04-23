@@ -8,8 +8,12 @@ gem 'sqlite3'
 gem 'puma'
 gem 'sass-rails'
 gem 'webpacker'
-gem 'jquery-rails'
 gem 'rails-i18n'
+
+# UI
+gem 'jquery-rails'
+gem 'bootstrap'
+
 # gem 'turbolinks'
 gem 'jbuilder'
 # gem 'redis'

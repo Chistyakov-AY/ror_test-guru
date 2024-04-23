@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RorTestGuru</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>RoRTestGuru</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1, shrink-to-fit="no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,16 +12,12 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <p class="nav user">
-      <%= t('admin.nav.welcome', wel: current_user.email) %></b> |
-      <%= link_to t('admin.nav.log'), destroy_user_session_path, method: :delete %>
-      </p>
-    <% end %>
-    
-    <%= render 'shared/flash' %>
+    <%= render 'shared/nav' %>
 
+    <div class="container">
+      <%= render 'shared/flash' %>
       <%= yield %>
+    </div>
   </body>
   <%= render "layouts/footer" %>
 </html>
