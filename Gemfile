@@ -14,6 +14,9 @@ gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'bootstrap'
 
+# NETWORKING
+gem 'faraday'
+
 # gem 'turbolinks'
 gem 'jbuilder'
 # gem 'redis'

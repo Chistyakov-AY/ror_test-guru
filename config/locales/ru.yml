@@ -16,6 +16,9 @@ ru:
       header: "Прохождение Теста '%{test}'. Удачи!"
       total_questions: "Всего вопросов: %{count}"
       question_number: "Вопрос №- %{count} :"
+    gist:
+      success: "Gist успешно сохранен"
+      failure: "Во время сохранения gist произошла ошибка"
   
   devise:
     sessions:

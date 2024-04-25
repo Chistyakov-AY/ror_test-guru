@@ -16,6 +16,9 @@ en:
       header: "Passing Test '%{test}'. Good luck!"
       total_questions: "Total questions: %{count}"
       question_number: "Question №- %{count} :"
+    gist:
+      succes: "Gist was succesfully created!"
+      failure: "An error occured while saving gist"
 
   devise:
     sessions:

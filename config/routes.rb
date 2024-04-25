@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :test_passages, only: %i[show update] do
     member do
+      post :gist
       get :result
     end
   end
