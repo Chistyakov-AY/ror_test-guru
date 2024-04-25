@@ -17,7 +17,7 @@ en:
       total_questions: "Total questions: %{count}"
       question_number: "Question №- %{count} :"
     gist:
-      succes: "Gist was succesfully created!"
+      success: "Gist was succesfully created!"
       failure: "An error occured while saving gist"
 
   devise:
