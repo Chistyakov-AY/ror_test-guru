@@ -1,0 +1,30 @@
+<div class="row justify-content-center mt-3">  
+  <div class="col col—md—4">
+
+    <h3><%= t('.header') %></h3>
+
+    <table class="table table-success table-striped" style="width: auto" >
+      <thead>
+        <tr>
+          <th class="text-danger"><%= t('.question') %></th>
+          <th class="text-danger"><%= t('.user') %></th>
+          <th class="text-danger"><%= t('.url') %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @gists.each do |gist| %>
+          <tr>
+            <td><%= link_to gist.question.body[0..24], admin_question_path(gist.question) %></td>
+            <td><%= gist.user.email %></td>
+            <td><%= link_to gist.url, gist.url, target: :new %></td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+    <p>
+    <%= link_to t('helpers.buttons.back'), admin_tests_path %>
+    </p>
+  </div>
+</div>

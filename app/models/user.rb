@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :author_tests, class_name: "Test"
+  has_many :gists, dependent: :destroy
+  has_many :questions, through: :gists, dependent: :destroy
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
