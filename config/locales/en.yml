@@ -16,9 +16,14 @@ en:
       header: "Passing Test '%{test}'. Good luck!"
       total_questions: "Total questions: %{count}"
       question_number: "Question №- %{count} :"
-    gist:
-      success: "Gist was succesfully created!"
+
+  gists:
+    create:
+      success: "Gist was succesfully created: %{url}"
       failure: "An error occured while saving gist"
+
+  services:
+    description: "A question about %{test} from TestGuru"
 
   devise:
     sessions:
@@ -171,3 +176,9 @@ en:
         success: "Answer was successfully update!"
       destroy:
         success: "Answer was successfully destroy!"
+    gists:
+      index:
+        header: "All Gists"
+        question: "Questions"
+        user: "Users"
+        url: "Links"

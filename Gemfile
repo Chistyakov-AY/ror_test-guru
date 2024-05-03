@@ -10,6 +10,12 @@ gem 'sass-rails'
 gem 'webpacker'
 gem 'rails-i18n'
 
+# DOTENV
+gem 'dotenv-rails'
+
+# GITHUB
+gem 'octokit'
+
 # UI
 gem 'jquery-rails'
 gem 'bootstrap'

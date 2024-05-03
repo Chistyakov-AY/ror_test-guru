@@ -16,9 +16,14 @@ ru:
       header: "Прохождение Теста '%{test}'. Удачи!"
       total_questions: "Всего вопросов: %{count}"
       question_number: "Вопрос №- %{count} :"
-    gist:
-      success: "Gist успешно сохранен"
+
+  gists:
+    create:
+      success: "Gist успешно сохранен: %{url}"
       failure: "Во время сохранения gist произошла ошибка"
+
+  services:
+    description: "Вопрос о %{test} от TestGuru"
   
   devise:
     sessions:
@@ -173,3 +178,9 @@ ru:
         success: "Ответ успешно обновлен!"
       destroy:
         success: "Ответ успешно удален!"
+    gists:
+      index:
+        header: "Все Gists"
+        question: "Вопросы"
+        user: "Пользователи"
+        url: "Ссылки"
