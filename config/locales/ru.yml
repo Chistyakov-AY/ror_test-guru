@@ -16,14 +16,6 @@ ru:
       header: "Прохождение Теста '%{test}'. Удачи!"
       total_questions: "Всего вопросов: %{count}"
       question_number: "Вопрос №- %{count} :"
-
-  gists:
-    create:
-      success: "Gist успешно сохранен: %{url}"
-      failure: "Во время сохранения gist произошла ошибка"
-
-  services:
-    description: "Вопрос о %{test} от TestGuru"
   
   devise:
     sessions:
@@ -31,9 +23,8 @@ ru:
       email: "Логин"
       pass: "Пароль"
       remember: "Запомни меня"
-      enter: "Ввод"
-      enter_email: "Введите майл"
    
+
   tests:
     index:
       header: "Доступные Тесты:"
@@ -50,9 +41,6 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
-    nav:
-      log_in: "Вход"
-      sign_up: "Регистрация"
 
   tests_mailer:
     completed_test:
@@ -178,9 +166,3 @@ ru:
         success: "Ответ успешно обновлен!"
       destroy:
         success: "Ответ успешно удален!"
-    gists:
-      index:
-        header: "Все Gists"
-        question: "Вопросы"
-        user: "Пользователи"
-        url: "Ссылки"

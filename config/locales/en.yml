@@ -17,23 +17,12 @@ en:
       total_questions: "Total questions: %{count}"
       question_number: "Question №- %{count} :"
 
-  gists:
-    create:
-      success: "Gist was succesfully created: %{url}"
-      failure: "An error occured while saving gist"
-
-  services:
-    description: "A question about %{test} from TestGuru"
-
   devise:
     sessions:
       header: "Entrance to '%{resource}'"
       email: "Email"
       pass: "Password"
       remember: "Remember me"
-      enter: "Enter"
-      enter_email: "Enter email"
-
   tests:
     index:
       header: "All tests:"
@@ -48,9 +37,6 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
-    nav:
-      log_in: "Log in"
-      sign_up: "Sign up"
 
   tests_mailer:
     completed_test:
@@ -176,9 +162,3 @@ en:
         success: "Answer was successfully update!"
       destroy:
         success: "Answer was successfully destroy!"
-    gists:
-      index:
-        header: "All Gists"
-        question: "Questions"
-        user: "Users"
-        url: "Links"

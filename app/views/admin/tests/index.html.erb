@@ -1,24 +1,19 @@
-  <div class="row justify-content-center mt-3">  
-    <div class="col col—md—4">
-      <h1><%= t('.header') %></h1>
+<h1><%= t('.header') %></h1>
 
-      <table class="table table-success table-striped" style="width: auto" >
-        <tr>
-          <th class="text-danger"><%= t('helpers.label.all_tests.id') %></th>
-          <th class="text-danger"><%= t('helpers.label.all_tests.title') %></th>
-          <th class="text-danger"><%= t('helpers.label.all_tests.level') %></th>
-          <th class="text-danger"><%= t('helpers.label.all_tests.author') %></th>
-          <th class="text-danger"><%= t('helpers.label.all_tests.created_at') %></th>
-          <th colspan="3" class="text-danger"><%= t('helpers.label.all_tests.action') %></th>
-        </tr>
-        <%= render @tests%>
-      </table>
-      <p class="text-danger">
-      <%= link_to t('admin.users.index.users'), admin_users_path %> |
-      <%= link_to t('admin.users.index.questions'), admin_questions_path %> |
-      <%= link_to t('admin.users.index.answers'), admin_answers_path %> |
-      <%= link_to t('admin.gists.index.header'), admin_gists_path %> |
-      <%= link_to t('admin.users.index.new'), new_admin_test_path(@test) %>
-      </p>
-    </div>
-  </div>
+<table>
+  <tr>
+    <th><%= t('helpers.label.all_tests.id') %></th>
+    <th><%= t('helpers.label.all_tests.title') %></th>
+    <th><%= t('helpers.label.all_tests.level') %></th>
+    <th><%= t('helpers.label.all_tests.author') %></th>
+    <th><%= t('helpers.label.all_tests.created_at') %></th>
+    <th colspan="3"><%= t('helpers.label.all_tests.action') %></th>
+  </tr>
+  <%= render @tests%>
+</table>
+<p>
+<%= link_to t('admin.users.index.users'), admin_users_path %> |
+<%= link_to t('admin.users.index.questions'), admin_questions_path %> |
+<%= link_to t('admin.users.index.answers'), admin_answers_path %> |
+<%= link_to t('admin.users.index.new'), new_admin_test_path(@test) %>
+</p>
