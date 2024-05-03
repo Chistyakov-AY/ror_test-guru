@@ -1,5 +1,5 @@
 <% if resource.errors.present? %>
-  <div class="alert alert-danger" role="alert">
+  <div>
     <%= t('.header', count: resource.errors.count) %>:
     <ol>
       <% resource.errors.full_messages.each do |message| %>

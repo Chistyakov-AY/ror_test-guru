@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RoRTestGuru</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1, shrink-to-fit="no">
+    <title>RorTestGuru</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,13 +10,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-info">
-    <%= render 'shared/nav' %>
+  <body>
+    <% if user_signed_in? %>
+      <p class="nav user">
+      <%= t('admin.nav.welcome', wel: current_user.email) %></b> |
+      <%= link_to t('admin.nav.log'), destroy_user_session_path, method: :delete %>
+      </p>
+    <% end %>
+    
+    <%= render 'shared/flash' %>
 
-    <div class="container">
-      <%= render 'shared/flash' %>
       <%= yield %>
-      <%= render "layouts/footer" %>
-    </div>
   </body>
+  <%= render "layouts/footer" %>
 </html>

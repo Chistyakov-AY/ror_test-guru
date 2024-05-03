@@ -1,2 +1,0 @@
-module Admin::GistHelper
-end
