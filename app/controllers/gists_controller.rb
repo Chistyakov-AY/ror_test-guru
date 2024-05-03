@@ -1,10 +1,6 @@
 class GistsController < ApplicationController
   before_action :set_test_passage, only: %i[create]
 
-  def index
-
-  end
-
   def create
     client = Octokit::Client.new(access_token: GitHubClient::GITHUB_TOKEN)
     service = GistQuestionService.new(@test_passage.current_question, client:)
