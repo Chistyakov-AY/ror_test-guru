@@ -1,11 +1,14 @@
-<h1><%= t('.header') %></h1>
-
-<table>
-  <tr>
-    <th><%= t('.id') %></th>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.action') %></th>
-  </tr>
-  <%= render partial: 'tests/test', collection: @tests %>
-</table>
+<div class="row justify-content-center mt-3">  
+  <div class="col col—md—4">
+    <h1><%= t('.header') %></h1>
+      <table class="table table-success table-striped" style="width: auto">
+        <tr>
+          <th><%= t('.id') %></th>
+          <th><%= t('.title') %></th>
+          <th><%= t('.level') %></th>
+          <th><%= t('.action') %></th>
+        </tr>
+          <%= render partial: 'tests/test', collection: @tests %>
+      </table>
+  </div>
+</div>

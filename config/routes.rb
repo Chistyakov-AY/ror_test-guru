@@ -30,5 +30,8 @@ Rails.application.routes.draw do
     resources :users, only: %i[ index destroy create]
     resources :questions, only: :index
     resources :answers, only: :index
+    resources :gists, only: :index
   end
+
+  resources :gists, only: :create
 end
