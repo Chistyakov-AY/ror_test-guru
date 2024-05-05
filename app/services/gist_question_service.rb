@@ -1,4 +1,5 @@
 class GistQuestionService
+  attr_reader :client
   
   def initialize(question, client: nil)
     @question = question
@@ -24,7 +25,7 @@ class GistQuestionService
           content: gist_content
         }
       }
-    }    
+    }
   end
 
   def gist_content
@@ -32,5 +33,4 @@ class GistQuestionService
     content += @question.answers.pluck(:body)
     content.join("\n")
   end
-
 end
