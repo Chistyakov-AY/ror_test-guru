@@ -8,7 +8,7 @@ class GistsController < ApplicationController
     result = service.call
 
     if service.success?
-      current_user.gists.create(user_id: :id, question_id: @test_passage.current_question.id, url: result['html_url'].html_safe)
+      current_user.gists.create(question_id: @test_passage.current_question.id, url: result['html_url'].html_safe)
       redirect_to @test_passage, notice: t('.success', url: result['html_url']).html_safe
     else
       redirect_to @test_passage, alert: t('.failure')
