@@ -1,8 +1,16 @@
-<div class="nav nav-admin">
-  <span class="nav-admin title"><%= t('admin.nav.header') %></span>
-
-  <div class="nav-admin user">
-    <%= t('admin.nav.welcome', wel: @current_user.email) %></b> |
-    <%= link_to t('admin.nav.log'), destroy_user_session_path, method: :delete %>
-  </div>
-</div>
+<nav class="navbar navbar-light bg-danger">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %> 
+  <%= link_to 'AdminTestGuru', admin_tests_path, class: 'navbar-brand' %> 
+    
+  <span class="navbar-text">
+    <div class="nav nav-admin">
+      <% if user_signed_in? %>
+        <b><%= t('admin.nav.welcome', wel: @current_user.email) %> |
+        <%= link_to t('admin.nav.log'), destroy_user_session_path, method: :delete %></b>
+      <% else %>
+        <b><%= link_to t('shared.nav.log_in'), new_session_path(resource_name) %> |
+        <%= link_to t('shared.nav.sign_up'), new_registration_path(resource_name) %></b>
+      <% end %>
+    </div>
+  </span>
+</nav>
