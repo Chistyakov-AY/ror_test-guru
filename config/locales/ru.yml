@@ -23,7 +23,7 @@ ru:
       failure: "Во время сохранения gist произошла ошибка"
 
   services:
-    description: "Вопрос о %{test} от TestGuru"
+    description: "Тест %{test} от TestGuru"
   
   devise:
     sessions:
