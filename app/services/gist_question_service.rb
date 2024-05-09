@@ -4,7 +4,7 @@ class GistQuestionService
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    @client = client || GitHubClient.new
+    @client = client || GithubClient.new
   end
 
   def call
@@ -12,7 +12,7 @@ class GistQuestionService
   end
 
   def success? 
-    @client.last_response.status == 201
+    @client.success?
   end
 
   private
