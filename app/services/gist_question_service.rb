@@ -1,17 +1,18 @@
 class GistQuestionService
+  attr_reader :client
   
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    @client = client || GitHubClient.new
+    @client = client || GithubClient.new
   end
 
   def call
     @client.create_gist(gist_params)
   end
 
-  def success?
-    @client.last_response.status == 201
+  def success? 
+    @client.success?
   end
 
   private
@@ -24,7 +25,7 @@ class GistQuestionService
           content: gist_content
         }
       }
-    }    
+    }
   end
 
   def gist_content
@@ -32,5 +33,4 @@ class GistQuestionService
     content += @question.answers.pluck(:body)
     content.join("\n")
   end
-
 end

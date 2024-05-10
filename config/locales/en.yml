@@ -23,7 +23,7 @@ en:
       failure: "An error occured while saving gist"
 
   services:
-    description: "A question about %{test} from TestGuru"
+    description: "A test about %{test} from TestGuru"
 
   devise:
     sessions:
