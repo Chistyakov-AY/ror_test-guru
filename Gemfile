@@ -19,6 +19,7 @@ gem 'octokit'
 # UI
 gem 'jquery-rails'
 gem 'bootstrap'
+gem 'octicons_helper'
 
 # NETWORKING
 gem 'faraday'
