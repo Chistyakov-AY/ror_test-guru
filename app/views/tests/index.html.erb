@@ -1,10 +1,13 @@
 <div class="row justify-content-center mt-3">  
   <div class="col col—md—4">
     <h1><%= t('.header') %></h1>
-      <table class="table table-success table-striped" style="width: auto">
+      <table class="table">
         <tr>
-          <th><%= t('.id') %></th>
-          <th><%= t('.title') %></th>
+          <th class="sort-by-title pointer">
+            <%= t('.title') %>
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>
           <th><%= t('.level') %></th>
           <th><%= t('.action') %></th>
         </tr>
