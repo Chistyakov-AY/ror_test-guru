@@ -31,14 +31,14 @@ function sortRowsByTitle() {
   sortedTable.classList.add('table')
   sortedTable.appendChild(rows[0])
 
-  var sortedTable_headers = sortedTable.createTHead()
-  sortedTable_headers.appendChild(rows[0])
+  var headerSortedTable = sortedTable.createTHead()
+  headerSortedTable.appendChild(rows[0])
 
-  var sortedTable_body = sortedTable.createTBody()
+  var bodySortedTable = sortedTable.createTBody()
 
   for (var i = 0; i < sortedRows.length; i++) {
     sortedTable.appendChild(sortedRows[i])
-    sortedTable_body.appendChild(sortedRows[i])
+    bodySortedTable.appendChild(sortedRows[i])
   }
   
   table.parentNode.replaceChild(sortedTable, table)
