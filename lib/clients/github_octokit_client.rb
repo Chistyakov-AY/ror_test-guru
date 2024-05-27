@@ -12,4 +12,3 @@ class GithubOctokitClient < BaseClient
     @http_client.last_response.status == 201
   end
 end
-
