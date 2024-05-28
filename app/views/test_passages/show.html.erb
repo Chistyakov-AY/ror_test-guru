@@ -1,5 +1,9 @@
 <h2><%= t('.header', test: @test_passage.test.title) %></h2>
 
+<%= content_tag :div, class: 'progress', data: { percent: @test_passage.progress.round } do %>
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+<% end %>
+
 <b>
 <% @test_passage.test.question_ids.each_with_index do |num, index| %>
   <% if "#{num}" == "#{@test_passage.current_question.id}" %>
