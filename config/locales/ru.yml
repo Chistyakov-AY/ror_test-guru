@@ -157,6 +157,8 @@ ru:
         success: "Тест успешно обновлен!"
       destroy:
         success: "Тест успешно удален!"
+      form_inline:
+        submit: "ОК"
     questions:
       index:
         header: "Список всех вопросов:"

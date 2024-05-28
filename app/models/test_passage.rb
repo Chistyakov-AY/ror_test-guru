@@ -27,6 +27,14 @@ class TestPassage < ApplicationRecord
 
     save!
   end
+
+  def progress
+    (current_question_number.to_f / test.questions.count) * 100
+  end
+
+  def current_question_number
+    current_question_index + 1
+  end
   
   private
   
@@ -51,5 +59,9 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_next_question
     self.current_question = next_question  
+  end
+
+  def current_question_index
+    test.questions.index(current_question)
   end
 end
