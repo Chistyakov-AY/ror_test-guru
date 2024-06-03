@@ -58,7 +58,7 @@ class TestPassage < ApplicationRecord
   end
 
   def before_validation_set_next_question
-    self.current_question = next_question  
+      self.current_question = next_question  
   end
 
   def current_question_index

@@ -16,6 +16,7 @@ ru:
       header: "Прохождение Теста '%{test}'. Удачи!"
       total_questions: "Всего вопросов: %{count}"
       question_number: "Вопрос №- %{count} :"
+      answer_the_question: "Ответить"
 
   gists:
     create:
@@ -42,6 +43,8 @@ ru:
       level: "Уровень:"
       action: "Действия:"
       button: "Старт"
+    start:
+      without_question: "Тест без вопросов!"
 
   shared:
     errors:

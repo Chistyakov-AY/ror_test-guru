@@ -16,6 +16,7 @@ en:
       header: "Passing Test '%{test}'. Good luck!"
       total_questions: "Total questions: %{count}"
       question_number: "Question №- %{count} :"
+      answer_the_question: "Answer the question"
 
   gists:
     create:
@@ -42,6 +43,8 @@ en:
       level: "Level:"
       action: "Actions:"
       button: "Start"
+    start:
+      without_question: "Test without questions!"
   
   shared:
     errors:
