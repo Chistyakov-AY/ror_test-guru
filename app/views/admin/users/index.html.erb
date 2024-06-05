@@ -1,16 +1,19 @@
 <h1><%= t('.header') %></h1>
 
-<table>
-  <tr>
-    <th><%= t('helpers.label.all_users.id') %></th>
-    <th><%= t('helpers.label.all_users.type') %></th>
-    <th><%= t('helpers.label.all_users.first_name') %></th>
-    <th><%= t('helpers.label.all_users.last_name') %></th>
-    <th><%= t('helpers.label.all_users.email') %></th>
-    <th colspan="1"><%= t('helpers.label.all_users.action') %></th>
-  </tr>
-  <%= render partial: 'admin/users/user', collection: @users %>
-</table>
-<p>
-<%= link_to t('helpers.buttons.back'), admin_tests_path %>
-</p>
+<div class="row justify-content-center mt-3">  
+  <div class="col col—md—4">
+    <table class="table table-success table-striped" style="width: auto" >
+      <tr align="center">
+        <th class="text-danger"><%= t('helpers.label.all_users.type') %></th>
+        <th class="text-danger"><%= t('helpers.label.all_users.first_name') %></th>
+        <th class="text-danger"><%= t('helpers.label.all_users.last_name') %></th>
+        <th class="text-danger"><%= t('helpers.label.all_users.email') %></th>
+        <th class="text-danger" colspan="1"><%= t('helpers.label.all_users.action') %></th>
+      </tr>
+      <%= render partial: 'admin/users/user', collection: @users %>
+    </table>
+    <p>
+    <%= link_to t('helpers.buttons.back'), admin_tests_path %>
+    </p>
+  </div>
+</div>
