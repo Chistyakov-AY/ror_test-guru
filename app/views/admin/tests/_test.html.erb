@@ -6,6 +6,13 @@
   <td class="align-middle"><%= test.level %></td>
   <td class="align-middle"><%= test.author.first_name %></td>
   <td class="align-middle"><%= test.created_at %></td>
+  <td class="text-center">
+  <% if test.publication %>
+    <%= t('tests.test.published') %>
+  <% else %>
+    <%= t('tests.test.nopublished') %>
+  <% end %>
+  </td>
   <td class="align-middle"><%= link_to t('helpers.buttons.show'), admin_test_path(test) %></td>
   <td class="align-middle">
   <%= link_to t('helpers.buttons.edit'), 

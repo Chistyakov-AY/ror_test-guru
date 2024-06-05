@@ -17,6 +17,8 @@ ru:
       total_questions: "Всего вопросов: %{count}"
       question_number: "Вопрос №- %{count} :"
       answer_the_question: "Ответить"
+    update:
+      no_answer_selected: "Необходимо выбрать ответ!"
 
   gists:
     create:
@@ -34,7 +36,21 @@ ru:
       remember: "Запомни меня"
       enter: "Ввод"
       enter_email: "Введите майл"
-   
+  
+  feedbacks:
+    new:
+      header: "Форма обратной связи"
+      text: "Сообщение:"
+      send: "Отправить"
+      back: "Назад"
+    index:
+      header: "Список всех обращений:"
+      email: "Эл. почта"
+      text: "Обращение"
+      created_at: "Дата создания"
+    create:
+      success: "Сообщение отправлено!"
+
   tests:
     index:
       header: "Доступные Тесты:"
@@ -43,8 +59,22 @@ ru:
       level: "Уровень:"
       action: "Действия:"
       button: "Старт"
+      feedback: "Обратная связь"
     start:
-      without_question: "Тест без вопросов!"
+      without_question: "В тесте не хватает вопросов или ответов!"
+    test:
+      published: "Тест опубликован!"
+      nopublished: "Тест не опубликован!"
+
+  feedback:
+    index:
+      header: "Обратная связь"
+      text: "Напишите сообщение:"
+      back: "Назад"
+      send: "Отправить"
+    create:
+      success: "Сообщение отправлено!"
+      failure: "Ошибка, сообщение не оправлено!"
 
   shared:
     errors:
@@ -56,6 +86,10 @@ ru:
     nav:
       log_in: "Вход"
       sign_up: "Регистрация"
+
+  layouts:
+    footer:
+      feedback: "Обратная связь"
 
   tests_mailer:
     completed_test:
@@ -91,11 +125,12 @@ ru:
         category_id: "Категория"
       all_tests:
         id: "Номер:"
-        title: "Тесты(вопросы):"
+        title: "Тесты:"
         level: "Уровень:"
         author: "Автор:"
         created_at: "Создан/Изменен:"
         action: "Действия:"
+        status: "Статус теста:"
       show_test:
         id: "Номер:"
         body: "Вопросы(ответы):"
@@ -154,6 +189,7 @@ ru:
       show:
         new: "Создать новый вопрос"
         header: "Вопросы к Тесту '%{test}':"
+        publication: "Опубликовать!"
       create:
         success: "Тест успешно создан!"
       update:
@@ -189,3 +225,4 @@ ru:
         question: "Вопросы"
         user: "Пользователи"
         url: "Ссылки"
+        feedbacks: "Обратная связь"
