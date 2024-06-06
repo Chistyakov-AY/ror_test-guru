@@ -61,7 +61,7 @@ ru:
       button: "Старт"
       feedback: "Обратная связь"
     start:
-      without_question: "В тесте не хватает вопросов или ответов!"
+      without_question: "В тесте не хватает вопросов!"
     test:
       published: "Тест опубликован!"
       nopublished: "Тест не опубликован!"

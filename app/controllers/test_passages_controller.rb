@@ -4,10 +4,8 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result gist]
 
   def update
-    flash.delete(:alert)
-    
     if @test_passage.answer_selected?(params[:answer_ids])
-      flash[:alert] = t('.no_answer_selected')
+      flash.now[:alert] = t('.no_answer_selected')
       render :show
     else
       @test_passage.accept!(params[:answer_ids])

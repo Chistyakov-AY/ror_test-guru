@@ -7,7 +7,7 @@ class TestsController < ApplicationController
   end
 
   def start
-    if test_without_questions? || question_without_aswers?
+    if @test.questions.empty?
       redirect_to tests_path, alert: t('.without_question')
     else
       current_user.tests.push(@test)
@@ -19,17 +19,5 @@ private
 
   def find_test
     @test = Test.find(params[:id])    
-  end
-
-  def test_without_questions?
-    @test.questions.to_a.empty?
-  end
-
-  def question_without_aswers?
-    result = false
-    @test.questions.each { |q|
-    result = true if q.answers.to_a.empty?
-    }
-    return result   
   end
 end
