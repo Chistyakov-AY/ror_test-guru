@@ -11,6 +11,15 @@
   
   <%= render partial: 'admin/questions/question', collection: @test.questions %>
 </table>
+
+<%= form_with(model:[:admin, @test]) do |form| %>
+  <p>
+    <%= form.label t('.publication') %><br>
+    <%= form.check_box :publication, id: :test_publication, class: 'form-check-input' %><br>
+    <%= form.submit class: 'btn btn-primary' %>
+  </p>
+<% end %>
+
 <p>
 <%= link_to t('helpers.buttons.back'), admin_tests_path %> |
 <%= link_to t('admin.tests.show.new'), new_admin_test_question_path(@test) %>

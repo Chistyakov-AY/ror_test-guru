@@ -16,6 +16,9 @@ en:
       header: "Passing Test '%{test}'. Good luck!"
       total_questions: "Total questions: %{count}"
       question_number: "Question №- %{count} :"
+      answer_the_question: "Answer the question"
+    update:
+      no_answer_selected: "You must select an answer!"
 
   gists:
     create:
@@ -34,6 +37,20 @@ en:
       enter: "Enter"
       enter_email: "Enter email"
 
+  feedbacks:
+    new:
+      header: "Feedback form"
+      text: "Message:"
+      send: "Send"
+      back: "Back"
+    index:
+      header: "All feedback:"
+      email: "Email"
+      text: "Text"
+      created_at: "Created_at"
+    create:
+      success: "Message send!"
+
   tests:
     index:
       header: "All tests:"
@@ -42,15 +59,37 @@ en:
       level: "Level:"
       action: "Actions:"
       button: "Start"
+      feedback: "Feedback"
+    start:
+      without_question: "Test without questions!"
+    test:
+      published: "Test was published!"
+      nopublished: "Test wasn't published!"
+
+  feedback:
+    index:
+      header: "Feedback"
+      text: "Write a message:"
+      back: "Back"
+      send: "Send"
+    create:
+      success: "Message sent!"
+      failure: "Error, message not sent!"
   
   shared:
     errors:
       header:
+        few: "%{count} errors detected"
+        many: "%{count} errors detected"
         one: "%{count} error detected"
         other: "%{count} errors detected"
     nav:
       log_in: "Log in"
       sign_up: "Sign up"
+
+  layouts:
+    footer:
+      feedback: "Feedback"
 
   tests_mailer:
     completed_test:
@@ -91,6 +130,7 @@ en:
         author: "Author:"
         created_at: "Created_at:"
         action: "Action:"
+        status: "Test's status:"
       show_test:
         id: "Id:"
         body: "Questions(answers):"
@@ -149,6 +189,7 @@ en:
       show:
         new: "Create new question"
         header: "All questions for Test '%{test}':"
+        publication: "Publication!"
       create:
         success: "Test was successfully created!"
       update:
@@ -184,3 +225,4 @@ en:
         question: "Questions"
         user: "Users"
         url: "Links"
+        feedbacks: "Feedbacks"

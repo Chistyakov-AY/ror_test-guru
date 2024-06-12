@@ -1,27 +1,31 @@
 <h1><%= t('.header') %></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t('helpers.label.all_answers.id') %></th>
-      <th><%= t('helpers.label.all_answers.body') %></th>
-      <th><%= t('helpers.label.all_answers.correct') %></th>
-      <th><%= t('helpers.label.all_answers.created_at') %></th>
-    </tr>
-  </thead>
+<div class="row justify-content-center mt-3">  
+  <div class="col col—md—4">
+    <table class="table table-success table-striped" style="width: auto">
+      <thead>
+        <tr align="center">
+          <th class="text-danger"><%= t('helpers.label.all_answers.id') %></th>
+          <th class="text-danger"><%= t('helpers.label.all_answers.body') %></th>
+          <th class="text-danger"><%= t('helpers.label.all_answers.correct') %></th>
+          <th class="text-danger"><%= t('helpers.label.all_answers.created_at') %></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @answers.each do |answers| %>
-      <tr>
-        <td><%= answers.id %></td>
-        <td><%= answers.body%></td>
-        <td><%= answers.correct %></td>
-        <td><%= answers.created_at %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @answers.each do |answers| %>
+          <tr align="center">
+            <td><%= answers.id %></td>
+            <td><%= answers.body%></td>
+            <td><%= answers.correct %></td>
+            <td><%= answers.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<p>
-<%= link_to t('helpers.buttons.back'), admin_tests_path %>
-</p>
+    <p>
+    <%= link_to t('helpers.buttons.back'), admin_tests_path %>
+    </p>
+  </div>
+</div>

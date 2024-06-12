@@ -13,7 +13,8 @@ class User < ApplicationRecord
   has_many :author_tests, class_name: "Test"
   has_many :gists
   has_many :questions, through: :gists
-
+  # has_many :feedbacks, dependent: :destroy
+  
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end

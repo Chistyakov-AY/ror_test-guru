@@ -1,27 +1,32 @@
-<h1><%= t('.header') %></h1>
+<div class="row justify-content-center mt-3">  
+  <div class="col col—md—4">
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t('helpers.label.all_questions.id') %></th>
-      <th><%= t('helpers.label.all_questions.body') %></th>
-      <th><%= t('helpers.label.all_questions.test_id') %></th>
-      <th><%= t('helpers.label.all_questions.created_at') %></th>
-    </tr>
-  </thead>
+    <h3><%= t('.header') %></h3>
 
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.id %></td>
-        <td><%= question.body%></td>
-        <td><%= question.test_id %></td>
-        <td><%= question.created_at %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <table class="table table-success table-striped" style="width: auto" >
+      <thead>
+        <tr align="center">
+          <th class="text-danger"><%= t('helpers.label.all_questions.id') %></th>
+          <th class="text-danger"><%= t('helpers.label.all_questions.body') %></th>
+          <th class="text-danger"><%= t('helpers.label.all_questions.test_id') %></th>
+          <th class="text-danger"><%= t('helpers.label.all_questions.created_at') %></th>
+        </tr>
+      </thead>
 
-</table>
-<p>
-<%= link_to t('helpers.buttons.back'), admin_tests_path %>
-</p>
+      <tbody>
+        <% @questions.each do |question| %>
+          <tr align="center">
+            <td><%= question.id %></td>
+            <td><%= question.body%></td>
+            <td><%= question.test_id %></td>
+            <td><%= question.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+    <p>
+    <%= link_to t('helpers.buttons.back'), admin_tests_path %>
+    </p>
+  </div>
+</div>

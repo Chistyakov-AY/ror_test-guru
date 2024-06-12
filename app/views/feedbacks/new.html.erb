@@ -1,0 +1,24 @@
+
+<%= form_with model: @feedback do |form| %>
+  <%= render 'shared/errors', resource: @feedback %>
+  <% if current_user.present? %>
+      <%= form.hidden_field :email, value: current_user.email %>
+  <% else %>
+    <div class="form-group mx-5">
+      <%= form.label :email %>
+      <%= form.email_field :email, class: 'form-control' %>
+    </div>
+
+  <% end %>
+
+ <div class="form-group mx-5">
+    <%= form.label t('feedbacks.new.header') %>
+    <%= form.text_area :text, size: '70x5', class: 'form-control' %>
+  </div>
+
+  <div class="actions mt-3 mx-5">
+    <%= form.submit t('feedbacks.new.send')%>
+  </div>
+<% end %>
+
+<%= link_to t('helpers.buttons.back'), tests_path %>

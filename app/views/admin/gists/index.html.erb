@@ -5,7 +5,7 @@
 
     <table class="table table-success table-striped" style="width: auto" >
       <thead>
-        <tr>
+        <tr align="center">
           <th class="text-danger"><%= t('.question') %></th>
           <th class="text-danger"><%= t('.user') %></th>
           <th class="text-danger"><%= t('.url') %></th>
@@ -14,7 +14,7 @@
 
       <tbody>
         <% @gists.each do |gist| %>
-          <tr>
+          <tr align="center">
             <td><%= link_to gist.question.body[0..24], admin_question_path(gist.question) %></td>
             <td><%= gist.user.email %></td>
             <td><%= link_to gist.url, gist.url, target: :new %></td>

@@ -20,6 +20,10 @@ class TestPassage < ApplicationRecord
     (correct_questions.to_f / test.questions.count) * 100
   end
 
+  def answer_selected?(params_answer_ids)
+    params_answer_ids.nil?
+  end
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
@@ -58,7 +62,7 @@ class TestPassage < ApplicationRecord
   end
 
   def before_validation_set_next_question
-    self.current_question = next_question  
+      self.current_question = next_question  
   end
 
   def current_question_index

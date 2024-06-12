@@ -10,6 +10,7 @@ class Test < ApplicationRecord
   belongs_to :category
   has_many :questions, dependent: :destroy
 
+  scope :publication, -> { where(publication: true) }
   scope :list_of_level_tests, -> (level) { where(level: level) }
   scope :simple_tests, -> { list_of_level_tests(0..1) }
   scope :average_tests, -> { list_of_level_tests(2..4) }

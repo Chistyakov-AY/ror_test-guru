@@ -1,0 +1,28 @@
+<h1><%= t('.header') %></h1>
+<div class="row justify-content-center mt-3">  
+  <div class="col col—md—4">
+    <table class="table table-success table-striped" style="width: auto">
+      <thead>
+        <tr align="center">
+          <th class="text-danger"><%= t('.email') %></th>
+          <th class="text-danger"><%= t('.text') %></th>
+          <th class="text-danger"><%= t('.created_at') %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @feedbacks.each do |feedback| %>
+          <tr align="center">
+            <td><%= feedback.email%></td>
+            <td><%= feedback.text %></td>
+            <td><%= feedback.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+    <p>
+    <%= link_to t('helpers.buttons.back'), admin_tests_path %>
+    </p>
+  </div>
+</div>
